@@ -1,0 +1,149 @@
+
+.divimg{
+  background-color: aquamarine;
+  height: 100%;
+  width: 100%;
+}
+.ImagemFundo{
+  min-height: 100%;
+}
+.txtNomeEmpresaB {
+  font-size: 40px;
+  display: inline-block;
+  font-family: Inter;
+  color: #fff;
+  text-align: center;
+  height: 35.33px;
+  flex-shrink: 0;
+}
+.txtLoginP,
+.txtNomeEmpresaB,
+.txtUsuarioTextField {
+  align-self: stretch;
+  position: relative;
+}
+.txtLoginP {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: Inter;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  height: 35.33px;
+  flex-shrink: 0;
+}
+.txtUsuarioTextField {
+  border: 0;
+  background-color: transparent;
+}
+.txtEntrarDiv {
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: Inter;
+  color: #fff;
+  text-align: left;
+  display: inline-block;
+}
+.btnEntrarButton {
+  cursor: pointer;
+  border: 0;
+  padding: 18px 108px;
+  background-color: #0e0e0e;
+  align-self: stretch;
+  border-radius: 20px;
+  box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);
+  height: 64px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.btnEntrarButton:hover {
+  background-color: #141414;
+}
+.btnEntrarButton:active {
+  background-color: #000;
+}
+.txtEsqueceuASenha {
+  cursor: pointer;
+  text-decoration: none;
+  align-self: stretch;
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: Inter;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  height: 35.33px;
+  flex-shrink: 0;
+}
+.txtEsqueceuASenha:hover {
+  color: #6f6f6f;
+}
+.cardLoginDiv,
+.cardLogincontentDiv {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.cardLogincontentDiv {
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.17);
+  backdrop-filter: blur(20px);
+  border: 2px solid #fff;
+  position: relative;
+  flex-direction: column;
+  padding: 65px 5% 15px;
+  align-items: center;
+  gap: 8%;
+  height: 60%;
+}
+.cardLoginDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 862px;
+  flex-direction: row;
+  padding: 2% 0 0;
+  align-items: flex-start;
+}
+.loginContentDivForm {
+  flex: 1;
+  align-self: stretch;
+  position: relative;
+}
+.frmLoginDiv {
+  position: relative;
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 1200px) {
+  .cardLoginDiv {
+    width: 100%;
+    padding-right: 0;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cardLogincontentDiv {
+    width: 25%;
+  }
+  .cardLoginDiv {
+    box-sizing: border-box;
+  }
+  .ImagemFundo{
+    left:-20%;
+  }
+}

@@ -7,6 +7,8 @@ import {
 import { FrmLogin } from "./Formularios/FrmLogin";
 import { useEffect } from "react";
 
+import {Home} from "./Formularios/Home";
+
 function App() {
   const action = useNavigationType();
   const location = useLocation();
@@ -28,6 +30,10 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/Home":
+        title = "Home";
+        metaDescription = "Home";
+        break;
     }
 
     if (title) {
@@ -47,6 +53,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<FrmLogin />} />
+      <Route path="/Home" element={<Home />} />
     </Routes>
   );
 }

@@ -1,6 +1,6 @@
 
 .divimg{
-  background-color: aquamarine;
+  background-color: #fff;
   height: 100%;
   width: 100%;
 }
@@ -129,6 +129,26 @@
   align-items: center;
   justify-content: center;
 }
+.bloco1{
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  height: 20%;
+}
+.bloco2{
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  gap: 15%;
+  height: 100%;
+}
 @media screen and (max-width: 1200px) {
   .cardLoginDiv {
     width: 100%;
@@ -136,7 +156,7 @@
     box-sizing: border-box;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px){
   .cardLogincontentDiv {
     width: 25%;
   }
@@ -145,5 +165,81 @@
   }
   .ImagemFundo{
     left:-20%;
+  }
+}
+
+@media screen and (max-height: 555px) {
+  .cardLogincontentDiv {
+    flex-direction: row;
+    height: 34%;
+    align-items: stretch;
+    padding: 3% 2% 2%;    
+  }
+  .ImagemFundo{
+  margin-top: -20%;
+  }
+  .bloco1{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    height: 60%;
+  }
+  .bloco2{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    gap: 10%;
+  }
+  .btnEntrarButton{
+    padding-left: 40%;
+    height:20%;
+    width: 70%;
+    align-self: center;
+  }
+  .txtEntrarDiv{
+    display: flex;
+    width: 100%;
+    font-size: 100%;    
+  }
+}
+
+@media screen and (max-height: 555px) and (max-width: 768px){
+  .ImagemFundo{
+    top: - 50px;
+   }
+  .bloco1{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+  }
+  .bloco2{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    gap: 10%;
+  }
+  .txtNomeEmpresaB {
+    font-size: 150%;
+  }
+  .txtLoginP {
+    margin: 0;
+    font-size: 80%;
   }
 }

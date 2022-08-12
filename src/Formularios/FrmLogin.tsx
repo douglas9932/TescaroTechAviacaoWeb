@@ -14,28 +14,34 @@ export const FrmLogin: FunctionComponent = () => {
         /> 
         </div>     
        
-        <div className={styles.cardLoginDiv}>
-          <div className={styles.cardLogincontentDiv}>
-            <b className={styles.txtNomeEmpresaB}>TescaroTech</b>
-            <p className={styles.txtLoginP}>LOGIN</p>
-            <TextField
-              className={styles.txtUsuarioTextField}
-              color="primary"
-              variant="standard"
-              type="text"
-              label="Usuário"
-              size="medium"
-              margin="none"
-            />
-            <TextField
-              className={styles.txtUsuarioTextField}
-              variant="standard"
-              label="Senha"
-            />
-            <button className={styles.btnEntrarButton}>
-              <div className={styles.txtEntrarDiv}>{`Entrar `}</div>
-            </button>
-            <a className={styles.txtEsqueceuASenha}>Esqueci Minha Senha</a>
+        <div className={styles.cardLoginDiv}>          
+            <div className={styles.cardLogincontentDiv}>
+
+              <div className={styles.bloco1}>
+                <b className={styles.txtNomeEmpresaB}>TescaroTech</b>
+                <p className={styles.txtLoginP}>LOGIN</p>
+              </div>
+              <div className={styles.bloco2}>
+                <TextField
+                  className={styles.txtUsuarioTextField}
+                  color="primary"
+                  variant="standard"
+                  type="text"
+                  label="Usuário"
+                  size="medium"
+                  margin="none"
+                />
+                <TextField
+                  className={styles.txtUsuarioTextField}
+                  variant="standard"
+                  label="Senha"
+                />
+                <button className={styles.btnEntrarButton}>
+                  <div className={styles.txtEntrarDiv}>{`Entrar `}</div>
+                </button>
+                <a className={styles.txtEsqueceuASenha}>Esqueci Minha Senha</a>
+              </div>
+              
           </div> 
         </div> 
       </form>

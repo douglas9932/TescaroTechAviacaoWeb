@@ -1,0 +1,79 @@
+.frameDiv,
+.frameDiv1 {
+  align-self: stretch;
+  position: relative;
+  overflow: hidden;
+}
+.frameDiv {
+  background-color: #fff;
+  height: 40px;
+  flex-shrink: 0;
+}
+.frameDiv1 {
+  flex: 1;
+  background-color: #e4ff98;
+}
+.frameDiv2,
+.menuDiv {
+  align-self: stretch;
+  flex-shrink: 0;
+}
+.frameDiv2 {
+  position: relative;
+  background-color: #99a3ff;
+  height: 243px;
+  overflow: hidden;
+}
+.menuDiv {
+  background-color: #72ccff;
+  width: 143px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2px;
+}
+.btnHamburguerButton {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: #faff00;
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  width: 21px;
+  height: 20px;
+}
+.corpoDiv,
+.pnlTopDiv {
+  align-self: stretch;
+  position: relative;
+}
+.pnlTopDiv {
+  background-color: #6f6f6f;
+  height: 40px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.corpoDiv {
+  flex: 1;
+  background-color: #81ffa4;
+}
+.bodyDiv,
+.frmMasterDiv {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.bodyDiv {
+  flex: 1;
+  align-self: stretch;
+  flex-direction: column;
+}
+.frmMasterDiv {
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+}

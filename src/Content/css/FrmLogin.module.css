@@ -176,7 +176,9 @@
     padding: 3% 2% 2%;    
   }
   .ImagemFundo{
-  margin-top: -20%;
+  margin-top: -15%;
+  min-height: 150%;
+  min-width: 100%;
   }
   .bloco1{
     display: flex;

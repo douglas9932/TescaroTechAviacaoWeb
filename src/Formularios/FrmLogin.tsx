@@ -1,8 +1,17 @@
-import { FunctionComponent } from "react";
-import { TextField, InputAdornment, Icon } from "@mui/material";
+import { FunctionComponent, useCallback } from "react";
+import { TextField } from "@mui/material";
 import styles from "../Content/css/FrmLogin.module.css";
+import { useNavigate } from "react-router-dom";
+
 
 export const FrmLogin: FunctionComponent = () => {
+  
+      const navigate = useNavigate();
+
+      const  ClickBtn = useCallback(()=>{
+        navigate("/Home");
+      }, [navigate]);
+
   return (
     <div className={styles.frmLoginDiv}>
       <form className={styles.loginContentDivForm}>   
@@ -36,7 +45,7 @@ export const FrmLogin: FunctionComponent = () => {
                   variant="standard"
                   label="Senha"
                 />
-                <button className={styles.btnEntrarButton}>
+                <button className={styles.btnEntrarButton} onClick={ClickBtn}>
                   <div className={styles.txtEntrarDiv}>{`Entrar `}</div>
                 </button>
                 <a className={styles.txtEsqueceuASenha}>Esqueci Minha Senha</a>

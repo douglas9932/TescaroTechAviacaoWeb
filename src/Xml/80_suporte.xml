@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<menu>
+	<!--..............MENU SUPORTE............-->
+	<menuItem>
+		<text0>Suporte</text0>
+		<at0>Alt+S</at0>
+		<img0>Img_Support_Agent_White_48px</img0>
+		<img1>Img_Support_Agent_White_24px</img1>
+		<url0></url0>
+		<id0></id0>
+		<subMenuItem>
+			<itemMenu>
+				<text1>Cadastro</text1>
+				<fa1>fas fa-list-alt</fa1>
+				<img1></img1>
+				<url1></url1>
+				<id1></id1>
+				<subMenu>
+					<item>
+						<text2>Cadastro 1</text2>
+						<fa2></fa2>
+						<img2></img2>
+						<url2>/psuporte/pcadastros/</url2>
+						<id2>0000</id2>
+					</item>
+				</subMenu>
+			</itemMenu>
+			<itemMenu>
+				<text1>Consultas e Relatórios</text1>
+				<fa1>fas fa-list-alt</fa1>
+				<img1></img1>
+				<url1></url1>
+				<id1></id1>
+				<subMenu>
+					<item>
+						<text2>Log Atualizador de Versões</text2>
+						<fa2></fa2>
+						<img2></img2>
+						<url2>/psuporte/pconsultaserelatorios/pconsultalogatualizadorversoes/</url2>
+						<id2>1730</id2>
+					</item>
+				</subMenu>
+			</itemMenu>
+		</subMenuItem>
+	</menuItem>
+	<!--........................................-->
+</menu>

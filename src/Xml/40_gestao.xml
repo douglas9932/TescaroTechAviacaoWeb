@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<menu>
+	<!--..............MENU GESTÃO............-->
+	<menuItem>
+		<text0>Gestão</text0>
+		<at0>Alt+G</at0>
+		<img0>Img_Lan_White_48px</img0>
+		<img1>Img_Lan_White_24px</img1>
+		<url0></url0>
+		<id0></id0>
+		<subMenuItem>
+			<itemMenu>
+				<text1>Lançamentos</text1>
+				<fa1>fas fa-list-alt</fa1>
+				<img1></img1>
+				<url1></url1>
+				<id1></id1>
+				<subMenu>
+					<item>
+						<text2>*****************</text2>
+						<fa2></fa2>
+						<img2></img2>
+						<url2>*********************</url2>
+						<id2>0000</id2>
+					</item>
+				</subMenu>
+			</itemMenu>
+			<itemMenu>
+				<text1>Cadastros</text1>
+				<fa1>fas fa-list-alt</fa1>
+				<img1></img1>
+				<url1></url1>
+				<id1></id1>
+				<subMenu>
+					<item>
+						<text2>************</text2>
+						<fa2></fa2>
+						<img2></img2>
+						<url2>******************************************</url2>
+						<id2>0000</id2>
+					</item>
+				</subMenu>
+			</itemMenu>
+			<itemMenu>
+				<text1>Monitor Gráfico</text1>
+				<fa1>fas fa-list-alt</fa1>
+				<img1></img1>
+				<url1></url1>
+				<id1></id1>
+				<subMenu>
+					<item>
+						<text2>Fat. Realizado Comb. X Metas</text2>
+						<fa2></fa2>
+						<img2></img2>
+						<url2>/pvendas/pconsultaserelatorios/pabastecimentos/</url2>
+						<id2>1781</id2>
+					</item>
+				</subMenu>
+			</itemMenu>			
+			<itemMenu>
+				<text1>Consultas e Relatórios</text1>
+				<fa1>fas fa-list-alt</fa1>
+				<img1></img1>
+				<url1></url1>
+				<id1></id1>
+				<subMenu>
+					<item>
+						<text2>Dem. Fat. Realizado Comb. X Metas</text2>
+						<fa2></fa2>
+						<img2></img2>
+						<url2>/pgestao/pconsultaserelatorios/pconsultavendascombustiveisretail/</url2>
+						<id2>1782</id2>
+					</item>
+					<item>
+						<text2>Vendas Comb. e Retail</text2>
+						<fa2></fa2>
+						<img2></img2>
+						<url2>/pgestao/pconsultaserelatorios/pconsultavendascombustiveisretail/</url2>
+						<id2>1783</id2>
+					</item>
+				</subMenu>
+			</itemMenu>
+		</subMenuItem>
+	</menuItem>
+	<!--........................................-->
+</menu>

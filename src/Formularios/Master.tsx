@@ -1,6 +1,11 @@
+import path from "path";
 import { FunctionComponent } from "react";
 import styles from "../Content/css/FrmMaster.module.css";
-import Sidebar from "../SideBar/Sidebar";
+
+function MenuHamburguer_Click(){
+
+}
+
 
 export const Master: FunctionComponent = ({
 children
@@ -14,7 +19,7 @@ children
      </div>
      <div className={styles.bodyDiv}>
        <div className={styles.pnlTopDiv}>
-         <button className={styles.btnHamburguerButton} />
+         <button className={styles.btnHamburguerButton} onClick={MenuHamburguer_Click}/>
        </div>
        <div className={styles.corpoDiv}>
          {children}

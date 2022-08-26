@@ -1,9 +1,9 @@
-import path from "path";
+
 import { FunctionComponent } from "react";
 import styles from "../Content/css/FrmMaster.module.css";
 
-function MenuHamburguer_Click(){
-
+function MenuHamburguer_Click()
+{
 }
 
 

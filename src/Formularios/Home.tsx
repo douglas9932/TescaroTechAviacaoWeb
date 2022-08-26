@@ -2,7 +2,8 @@ import React, { FunctionComponent } from 'react';
 import { Master } from './Master';
 
 function a ()
-{    
+{ 
+ 
   sessionStorage.setItem("User", "aaaaaa")
   sessionStorage.setItem("User2", "bbbbb")
 }

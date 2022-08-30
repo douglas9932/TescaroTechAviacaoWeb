@@ -14,7 +14,8 @@
   background-color: #e4ff98;
 }
 .frameDiv2,
-.menuDiv {
+.menuAberto,
+.menuRecolhido {
   align-self: stretch;
   flex-shrink: 0;
 }
@@ -24,15 +25,30 @@
   height: 243px;
   overflow: hidden;
 }
-.menuDiv {
+.menuAberto {
+  transition-delay: 0.1s;
+  transition-duration: 0.5s;
   background-color: #72ccff;
-  width: 143px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2px;
 }
+
+.menuRecolhido {
+  transition-delay: 0.1s;
+  transition-duration: 0.5s;
+  background-color: #72ccff;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2px;
+}
+
 .btnHamburguerButton {
   cursor: pointer;
   border: 0;

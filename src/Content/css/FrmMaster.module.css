@@ -25,28 +25,32 @@
   height: 243px;
   overflow: hidden;
 }
-.menuAberto {
-  transition-delay: 0.1s;
-  transition-duration: 0.5s;
-  background-color: #72ccff;
-  width: 200px;
+
+.SideBarDesktop{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2px;
+  background-color: crimson;
+  max-width: 200px;
+}
+
+.Open{
+  max-width: 200px;
+}
+.Close{
+  min-width: 50px;
+}
+.menuAberto {
+  transition-duration: 0.5s;
+  width: 200px;  
 }
 
 .menuRecolhido {
-  transition-delay: 0.1s;
   transition-duration: 0.5s;
-  background-color: #72ccff;
+  background-color: #3d41ff;
   width: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 2px;
 }
 
 .btnHamburguerButton {
@@ -92,4 +96,24 @@
   width: 100%;
   height: 100%;
   flex-direction: row;
+}
+
+@media screen and (width <= 700px){
+  .Open{
+    z-index: 99999;
+    max-width: 200px;
+  }
+  .Close{
+    z-index: 99999;
+    min-width: 0;
+  }
+  .menuRecolhido{
+    min-height: 0;
+    width: 0;
+  }
+  .bodyDiv{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
 }

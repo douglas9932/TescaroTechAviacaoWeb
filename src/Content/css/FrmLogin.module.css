@@ -6,6 +6,7 @@
 }
 .ImagemFundo{
   min-height: 100%;
+  min-width: 100%;
 }
 .txtNomeEmpresaB {
   font-size: 40px;

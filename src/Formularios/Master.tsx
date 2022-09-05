@@ -5,19 +5,27 @@ import { SideBar } from "./Arquivos/SideBar";
 
 function MenuHamburguer_Click()
 {
-  var a =document.getElementById("SideBar");
-  if(a!=null)
+
+  let SideBar =document.getElementById("SideBar");
+
+  if(SideBar!=null)
   {
-    if(a.className == styles.menuRecolhido)
-    {
-      a.className = (styles.menuAberto);
+    if(SideBar.classList.contains(styles.menuRecolhido))
+    {      
+      SideBar.classList.remove(styles.menuRecolhido);
+      SideBar.classList.remove(styles.Close);
+      SideBar.classList.add(styles.menuAberto);
+      SideBar.classList.add(styles.Open);
     }
     else
     {
-      a.className = (styles.menuRecolhido);
+      SideBar.classList.remove(styles.menuAberto);
+      SideBar.classList.remove(styles.Open);
+      SideBar.classList.add(styles.menuRecolhido);
+      SideBar.classList.add(styles.Close);
     }
   }
-  return a;
+  return SideBar;
 }
 
 
@@ -26,8 +34,8 @@ children
 }) => {
   return (
      <div className={styles.frmMasterDiv}>
-     <SideBar css={styles.menuAberto.toString()} label={""} />
-     <div className={styles.bodyDiv}>
+     <SideBar css={styles.SideBarDesktop.toString() + " " + styles.Open + " " + styles.menuAberto.toString()} label={""} />
+     <div id="CorpoDaPagina" className={styles.bodyDiv}>
        <div className={styles.pnlTopDiv}>
          <button className={styles.btnHamburguerButton} onClick={MenuHamburguer_Click}/>
        </div>

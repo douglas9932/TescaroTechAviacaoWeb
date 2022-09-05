@@ -1,0 +1,2 @@
+var MasterPage = "MasterPage-js"
+ 

@@ -15,6 +15,7 @@ function b ()
 }
 function c ()
 {
+  alert("AAAAAAAAAAAAAAAAA")
   sessionStorage.removeItem("User")
 }
 

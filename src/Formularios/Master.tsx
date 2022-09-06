@@ -1,64 +1,118 @@
 
-import { FunctionComponent, useEffect } from "react";
+import {FunctionComponent, useEffect, useState } from "react";
 import styles from "../Content/css/FrmMaster.module.css";
-import { SideBar } from "./Arquivos/SideBar";
+import { SideBar } from "../SideBar/SideBar";
+
+
+
 
 function MenuHamburguer_Click()
 {
-  let SideBar = document.getElementById("SideBar");
-  let CorpoDaPagina = document.getElementById("CorpoDaPagina");
-
-  if(SideBar!=null && CorpoDaPagina!=null)
+  const ConstSideBar = document.getElementById("SideBar");
+  const ConstCorpoDaPagina = document.getElementById("CorpoDaPagina");
+  if(ConstSideBar!=null && ConstCorpoDaPagina!=null)
   {
     if(window.innerWidth <= 700)
     {
-      if(SideBar.classList.contains(styles.menuRecolhido))
+      if(ConstSideBar.classList.contains(styles.menuRecolhido))
       {
-        SideBar.classList.add(styles.menuAberto);
-        CorpoDaPagina.classList.add(styles.Blur);
-        SideBar.classList.remove(styles.menuRecolhido);  
+        ConstSideBar.classList.add(styles.menuAberto);
+        ConstCorpoDaPagina.classList.add(styles.Blur);
+        ConstSideBar.classList.remove(styles.menuRecolhido);  
       }
     }
     else
     {      
-      if(SideBar.classList.contains(styles.menuRecolhido))
+      if(ConstSideBar.classList.contains(styles.menuRecolhido))
       {      
-        SideBar.classList.remove(styles.menuRecolhido);
-        SideBar.classList.remove(styles.Close);
-        SideBar.classList.add(styles.menuAberto);
-        SideBar.classList.add(styles.Open);
+        ConstSideBar.classList.remove(styles.menuRecolhido);
+        ConstSideBar.classList.remove(styles.Close);
+        ConstSideBar.classList.add(styles.menuAberto);
+        ConstSideBar.classList.add(styles.Open);
       }
       else
       {
-        SideBar.classList.remove(styles.menuAberto);
-        SideBar.classList.remove(styles.Open);
-        SideBar.classList.add(styles.menuRecolhido);
-        SideBar.classList.add(styles.Close);
+        ConstSideBar.classList.remove(styles.menuAberto);
+        ConstSideBar.classList.remove(styles.Open);
+        ConstSideBar.classList.add(styles.menuRecolhido);
+        ConstSideBar.classList.add(styles.Close);
       }     
     }
   }
-  return SideBar && CorpoDaPagina;
+  return ConstSideBar && ConstCorpoDaPagina;
 }
 
-
 function FunctionSideBar (){
-  let SideBar = document.getElementById("SideBar");
-  let CorpoDaPagina = document.getElementById("CorpoDaPagina");
-
-  if(CorpoDaPagina!= null && SideBar!= null)
+  const ConstSideBar = document.getElementById("SideBar");
+  const ConstCorpoDaPagina = document.getElementById("CorpoDaPagina");
+  if(ConstCorpoDaPagina!= null && ConstSideBar!= null)
   {
-    if(CorpoDaPagina.classList.contains(styles.Blur))
+    if(window.innerWidth <= 700)
     {
-      SideBar.classList.add(styles.menuAberto);
-      SideBar.classList.remove(styles.menuRecolhido);
-      CorpoDaPagina.classList.remove(styles.Blur);
+      if(ConstCorpoDaPagina.classList.contains(styles.Blur))
+      {
+        ConstSideBar.classList.remove(styles.menuAberto);
+        ConstCorpoDaPagina.classList.remove(styles.Blur);
+        ConstSideBar.classList.add(styles.menuRecolhido);
+      }
     }
   }
 }
 
+
 export const Master: FunctionComponent = ({
 children
-}) => {
+}) => {  
+  useEffect(() => {
+
+    function Page_OnLoad() 
+    {
+      if(window.innerWidth <= 700)
+      { 
+        let LetSideBar = document.getElementById("SideBar");
+        let LetCorpoDaPagina = document.getElementById("CorpoDaPagina");
+
+        if(LetSideBar != null && LetCorpoDaPagina !=null)
+        {
+          if(LetSideBar.classList.contains(styles.menuRecolhido))
+          {
+            LetSideBar.classList.add(styles.menuAberto);
+            LetCorpoDaPagina.classList.add(styles.Blur);
+            LetSideBar.classList.remove(styles.menuRecolhido);  
+          }
+          else
+          {
+            LetSideBar.classList.remove(styles.menuAberto);
+            LetCorpoDaPagina.classList.remove(styles.Blur);
+            LetSideBar.classList.add(styles.menuRecolhido);
+          }
+        }
+      }
+    }
+
+    function Page_OnResize() 
+    {
+      let LetSideBar = document.getElementById("SideBar");
+      let LetCorpoDaPagina = document.getElementById("CorpoDaPagina");
+      if(LetSideBar != null && LetCorpoDaPagina !=null)
+      {
+        if(window.innerWidth <= 700)
+        {           
+          LetSideBar.classList.remove(styles.menuAberto);
+          LetCorpoDaPagina.classList.remove(styles.Blur);
+          LetSideBar.classList.add(styles.menuRecolhido);
+        }
+      }
+    }
+
+    window.addEventListener('load', Page_OnLoad)
+    window.addEventListener('resize', Page_OnResize)
+    document.getElementById('CorpoDaPagina')?.addEventListener("click",FunctionSideBar)
+
+    
+  });
+
+
   return (
      <div className={styles.frmMasterDiv}>
       <SideBar css={styles.SideBarDesktop.toString() + " " + styles.Open + " " + styles.menuAberto.toString()} label={""} />
@@ -70,9 +124,8 @@ children
           {children}
         </div>
       </div>
-      <script src="MasterPage.js"></script>
+      <script src="./Functions.js"></script>
    </div>
-  ); 
-  
+  );   
 };
 

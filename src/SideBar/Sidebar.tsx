@@ -62,17 +62,30 @@ export const SideBar: FunctionComponent<Props>  =({ css, label, ...props }) => {
   useEffect(() => {
 
     let CorpoDaPagina = document.getElementById("CorpoDaPaginaClick");
+    const Menu = document.getElementById('SideBar');
 
-    if(CorpoDaPagina != null)
-    {
-      CorpoDaPagina.addEventListener("click", CorpoDaPaginaClick);
-    }
+    // if(CorpoDaPagina != null)
+    // {
+    //   CorpoDaPagina.addEventListener("click", CorpoDaPaginaClick);
+    // }
 
     function handleResize() {
       console.log('resized to: ', window.innerWidth, 'x', window.innerHeight)
     }
     
     window.addEventListener('resize', handleResize)
+
+    
+    document.addEventListener("mouseup",e =>{
+      const x = e
+      if(x!= null && Menu != null)
+      {        
+      if(!(Menu == x.target)){
+        Menu.classList.remove(styles.menuAberto);
+        Menu.classList.add(styles.menuRecolhido);
+      }      
+    }
+    });
   });
 
   return (    

@@ -4,12 +4,11 @@ import styles from "../Content/css/FrmMaster.module.css";
 import { SideBar } from "../SideBar/SideBar";
 
 
-
-
 function MenuHamburguer_Click()
 {
   const ConstSideBar = document.getElementById("SideBar");
-  const ConstCorpoDaPagina = document.getElementById("CorpoDaPagina");
+  const ConstCorpoDaPagina = document.getElementById("BodyDivSideBar");
+
   if(ConstSideBar!=null && ConstCorpoDaPagina!=null)
   {
     if(window.innerWidth <= 700)
@@ -44,7 +43,7 @@ function MenuHamburguer_Click()
 
 function FunctionSideBar (){
   const ConstSideBar = document.getElementById("SideBar");
-  const ConstCorpoDaPagina = document.getElementById("CorpoDaPagina");
+  const ConstCorpoDaPagina = document.getElementById("BodyDivSideBar");
   if(ConstCorpoDaPagina!= null && ConstSideBar!= null)
   {
     if(window.innerWidth <= 700)
@@ -70,22 +69,13 @@ children
       if(window.innerWidth <= 700)
       { 
         let LetSideBar = document.getElementById("SideBar");
-        let LetCorpoDaPagina = document.getElementById("CorpoDaPagina");
-
+        let LetCorpoDaPagina = document.getElementById("BodyDivSideBar");
+                
         if(LetSideBar != null && LetCorpoDaPagina !=null)
-        {
-          if(LetSideBar.classList.contains(styles.menuRecolhido))
-          {
-            LetSideBar.classList.add(styles.menuAberto);
-            LetCorpoDaPagina.classList.add(styles.Blur);
-            LetSideBar.classList.remove(styles.menuRecolhido);  
-          }
-          else
-          {
-            LetSideBar.classList.remove(styles.menuAberto);
-            LetCorpoDaPagina.classList.remove(styles.Blur);
-            LetSideBar.classList.add(styles.menuRecolhido);
-          }
+        {         
+          LetSideBar.classList.remove(styles.menuAberto);
+          LetCorpoDaPagina.classList.remove(styles.Blur);
+          LetSideBar.classList.add(styles.menuRecolhido);
         }
       }
     }
@@ -102,20 +92,28 @@ children
           LetCorpoDaPagina.classList.remove(styles.Blur);
           LetSideBar.classList.add(styles.menuRecolhido);
         }
+        else
+        {
+
+        }
       }
     }
 
     window.addEventListener('load', Page_OnLoad)
     window.addEventListener('resize', Page_OnResize)
-    document.getElementById('CorpoDaPagina')?.addEventListener("click",FunctionSideBar)
-
+    document.getElementById('BodyDivSideBar')?.addEventListener("click",FunctionSideBar)
     
+    Page_OnLoad()
+
   });
+
 
 
   return (
      <div className={styles.frmMasterDiv}>
+
       <SideBar css={styles.SideBarDesktop.toString() + " " + styles.Open + " " + styles.menuAberto.toString()} label={""} />
+      
       <div id="CorpoDaPagina" className={styles.bodyDiv}>
         <div className={styles.pnlTopDiv}>
           <button className={styles.btnHamburguerButton} onClick={MenuHamburguer_Click}/>
@@ -124,8 +122,6 @@ children
           {children}
         </div>
       </div>
-      <script src="./Functions.js"></script>
    </div>
   );   
 };
-

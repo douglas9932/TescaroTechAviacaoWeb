@@ -43,16 +43,20 @@ function onMouseLeave(){
 
 function CorpoDaPaginaClick(){
 
-  let SideBar =document.getElementById("SideBar");
-
+  let SideBar = document.getElementById("SideBar");
+  let Body = document.getElementById("BodyDivSideBar");
+ 
   if(SideBar!=null)
   {
     if(window.innerWidth <= 700)
     {
-      if(SideBar.classList.contains(styles.menuAberto))
+      if(Body?.classList.contains(styles.Blur))
       {
-        SideBar.classList.remove(styles.menuAberto);
-        SideBar.classList.add(styles.menuRecolhido);
+        if(SideBar.classList.contains(styles.menuAberto))
+        {
+          SideBar.classList.remove(styles.menuAberto);
+          SideBar.classList.add(styles.menuRecolhido);
+        }
       }
     }
   }
@@ -61,13 +65,12 @@ function CorpoDaPaginaClick(){
 export const SideBar: FunctionComponent<Props>  =({ css, label, ...props }) => {
   useEffect(() => {
 
-    let CorpoDaPagina = document.getElementById("CorpoDaPaginaClick");
-    const Menu = document.getElementById('SideBar');
+    let CorpoDaPagina = document.getElementById("BodyDivSideBar");
 
-    // if(CorpoDaPagina != null)
-    // {
-    //   CorpoDaPagina.addEventListener("click", CorpoDaPaginaClick);
-    // }
+    if(CorpoDaPagina != null)
+    {
+      CorpoDaPagina.addEventListener("click", CorpoDaPaginaClick);
+    }
 
     function handleResize() {
       console.log('resized to: ', window.innerWidth, 'x', window.innerHeight)
@@ -75,24 +78,18 @@ export const SideBar: FunctionComponent<Props>  =({ css, label, ...props }) => {
     
     window.addEventListener('resize', handleResize)
 
-    
-    document.addEventListener("mouseup",e =>{
-      const x = e
-      if(x!= null && Menu != null)
-      {        
-      if(!(Menu == x.target)){
-        Menu.classList.remove(styles.menuAberto);
-        Menu.classList.add(styles.menuRecolhido);
-      }      
-    }
-    });
   });
 
-  return (    
+  return (  
+    <div className={styles.DivSideBar}>
       <div id="SideBar" className={css} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-          <div className={styles.frameDiv} />
-          <div className={styles.frameDiv1} />
-          <div className={styles.frameDiv2} />
-      </div>  
-  );
+        <div className={styles.frameDiv} />
+        <div className={styles.frameDiv1} />
+        <div className={styles.frameDiv2} />
+      </div> 
+      <div id="BodyDivSideBar" className={styles.BodyDivSideBar}>
+      </div>
+    </div>
+         
+    );
 };

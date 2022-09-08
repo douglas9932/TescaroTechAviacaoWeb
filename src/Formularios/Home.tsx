@@ -26,6 +26,7 @@ export const Home: FunctionComponent = () => {
       <button onClick={a}>BTN1</button>
       <button onClick={b}>BTN2</button>
       <button onClick={c}>BTN3</button>
+      <input></input>
       <div id="Conteudo">
         <a>ssssssss</a>
       </div>

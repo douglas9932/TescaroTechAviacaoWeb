@@ -1,0 +1,44 @@
+.navlink{
+    cursor: pointer;
+    text-decoration:none;
+    font-style: normal;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    height: 30px;
+}
+
+.navicon{
+    display: flex;
+    width: 30px;
+    height: 30px;
+}
+
+ul{
+    list-style: none;
+    left: 0;
+    padding: 0;
+}
+ul li a p{
+    width: 100%;
+    color: darkgreen;
+}
+
+ul li ul {
+    display:none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: brown;
+    padding-left: 10px;
+}
+
+.IconOpenClose{
+    display: flex;
+    right: 0;
+}
+.IconOpenClose .Open{
+    transform: rotate(-90deg)
+}

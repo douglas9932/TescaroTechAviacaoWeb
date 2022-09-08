@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import { Button } from '../Components/Buttons/Button';
 import { Master } from './Master';
 
 function a ()

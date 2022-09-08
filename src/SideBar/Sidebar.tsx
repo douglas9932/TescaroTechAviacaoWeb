@@ -1,5 +1,6 @@
 import { FunctionComponent, useEffect, useRef, useState } from "react";
 import styles from "../Content/css/FrmMaster.module.css";
+import Style from "./css/SideBar.module.css";
 
 type Props = { css: string; label: string };
 
@@ -86,7 +87,13 @@ export const SideBar: FunctionComponent<Props>  =({ css, label, ...props }) => {
         <div className={styles.frameDiv} />
         <div className={styles.frameDiv1}>
           <ul>- Menu -
-            <li>1
+            <li><a className={Style.navlink}>
+                      <i className={Style.navicon}>
+                        <img  id='img2' src='./Icon.png' />
+                      </i>                      
+                      <p>1 nomeeee asdasa</p>
+                      <i className={Style.IconOpenClose}><img src="./IconCloseMenu.svg"></img></i>
+                  </a>
               <ul>
                 <li>1.1</li>
                 <li>1.2</li>

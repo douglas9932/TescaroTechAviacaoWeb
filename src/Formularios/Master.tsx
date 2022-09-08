@@ -1,7 +1,7 @@
 
 import {FunctionComponent, useEffect, useState } from "react";
 import styles from "../Content/css/FrmMaster.module.css";
-import { SideBar } from "../SideBar/SideBar";
+import { SideBar } from "../SideBar/Sidebar";
 
 
 function MenuHamburguer_Click()

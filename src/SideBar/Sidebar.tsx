@@ -84,7 +84,23 @@ export const SideBar: FunctionComponent<Props>  =({ css, label, ...props }) => {
     <div className={styles.DivSideBar}>
       <div id="SideBar" className={css} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
         <div className={styles.frameDiv} />
-        <div className={styles.frameDiv1} />
+        <div className={styles.frameDiv1}>
+          <ul>- Menu -
+            <li>1
+              <ul>
+                <li>1.1</li>
+                <li>1.2</li>
+              </ul>
+            </li>
+            <li>2</li>
+            <li>3
+              <ul>
+                <li>3.1</li>
+                <li>3.2</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
         <div className={styles.frameDiv2} />
       </div> 
       <div id="BodyDivSideBar" className={styles.BodyDivSideBar}>

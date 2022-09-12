@@ -1,6 +1,7 @@
 import { FunctionComponent, useEffect, useRef, useState } from "react";
 import styles from "../Content/css/FrmMaster.module.css";
 import Style from "./css/SideBar.module.css";
+import { Cadastros } from "./SubMenus/Cadastros";
 
 type Props = { css: string; label: string };
 
@@ -106,6 +107,7 @@ export const SideBar: FunctionComponent<Props>  =({ css, label, ...props }) => {
                 <li>3.2</li>
               </ul>
             </li>
+            <Cadastros/>
           </ul>
         </div>
         <div className={styles.frameDiv2} />

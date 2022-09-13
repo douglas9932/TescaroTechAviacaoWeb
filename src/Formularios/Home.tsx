@@ -1,5 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { Button } from '../Components/Buttons/Button';
+import BtnOpenModalEmpresa from '../Consultas/ConsultaEmpresa/BtnOpenModalEmpresa';
+import BtnOpenModalUsuario from '../Consultas/ConsultaPessoa/BtnOpenModalUsuario';
 import { Master } from './Master';
 
 function a ()
@@ -27,6 +29,8 @@ export const Home: FunctionComponent = () => {
       <button onClick={a}>BTN1</button>
       <button onClick={b}>BTN2</button>
       <button onClick={c}>BTN3</button>
+      <BtnOpenModalEmpresa/>
+      <BtnOpenModalUsuario/>
       <input></input>
       <div id="Conteudo">
         <a>ssssssss</a>

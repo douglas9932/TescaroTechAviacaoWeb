@@ -1,0 +1,29 @@
+.txtOpenModalDiv {
+  position: absolute;
+  top: calc(50% - 14px);
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 206px;
+  height: 28px;
+}
+.btnOpenModalUsuarioDiv {
+  position: absolute;
+  top: 288px;
+  left: 129px;
+  background-color: #256d7c;
+  width: 206px;
+  height: 28px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  font-family: Quicksand;
+}
+@media screen and (max-width: 250px) {
+  .txtOpenModalDiv {
+    display: none;
+  }
+}

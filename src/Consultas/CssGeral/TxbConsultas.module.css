@@ -1,0 +1,73 @@
+:root{
+	--Height: 30px;
+	--Width: 50%;
+	--WidthInput: 100%;
+	--Branco: #fff;
+	--Branco2: #dedede;
+	--CorFoco: rgb(234 76 137);
+}
+.TxbConsulta {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	height: var(--Height);
+	width: var(--Width);
+	background-color: var(--Branco);
+	border-radius: 10px;	
+	padding-left: 1px;
+}
+.TxbConsulta .Input {
+	position: relative;
+	display: flex;
+	height:var(--Height);
+	width: 100%;
+	background-color: var(--Branco);	
+	border-radius: 10px
+}
+.TxbConsulta .Buttons {
+	position: absolute;
+	z-index: 1;
+	display: flex;
+	right: 2px;
+	width: 60px;
+	height: 100%;
+	background-color: var(--Branco2);
+	padding-left: 1px;
+	border-radius: 0px 10px 10px 0px;	
+	gap: 1px;
+}
+.TxbConsulta .Input input:focus, .TxbConsulta .Input input:hover {
+	box-shadow: 0 0 0 1px var(--CorFoco);
+} 
+.TxbConsulta .Input input{
+	width: 100%;
+	outline: none;
+	border-style: none;
+	border-radius: 10px;
+	height: 100%;
+	margin-right: -70px;
+	box-shadow: 0 0 0 1px #666666;
+}
+.TxbConsulta .Buttons .Buscar{
+	cursor: pointer;
+	width: var(--Height);
+	height: 100%;
+	border-style: none;
+	background-color:var(--Branco);
+	justify-content: center;
+}
+.TxbConsulta .Buttons .Limpar{
+	cursor: pointer;
+	width: var(--Height);
+	height: 100%;
+	border-radius: 0px 10px 10px 0px;
+	border-style: none;
+	background-color:var(--Branco);
+	justify-content: center;
+}
+.TxbConsulta .Buttons button{
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 5px;
+	padding-right: 5px;
+}

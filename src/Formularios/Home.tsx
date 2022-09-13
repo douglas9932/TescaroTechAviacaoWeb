@@ -1,7 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import { Button } from '../Components/Buttons/Button';
 import BtnOpenModalEmpresa from '../Consultas/ConsultaEmpresa/BtnOpenModalEmpresa';
-import BtnOpenModalUsuario from '../Consultas/ConsultaPessoa/BtnOpenModalUsuario';
+import TxbConsultaEmpresa from '../Consultas/ConsultaEmpresa/TxbConsultaEmpresa';
+import BtnOpenModalUsuario from '../Consultas/ConsultaUsuario/BtnOpenModalUsuario';
+import TxbConsultaUsuario from '../Consultas/ConsultaUsuario/TxbConsultaUsuario';
 import { Master } from './Master';
 
 function a ()
@@ -30,8 +32,13 @@ export const Home: FunctionComponent = () => {
       <button onClick={b}>BTN2</button>
       <button onClick={c}>BTN3</button>
       <BtnOpenModalEmpresa/>
+      <br/>
       <BtnOpenModalUsuario/>
-      <input></input>
+      <br/>
+      <TxbConsultaEmpresa/>
+      <br/>
+      <TxbConsultaUsuario/>
+      <br/>
       <div id="Conteudo">
         <a>ssssssss</a>
       </div>

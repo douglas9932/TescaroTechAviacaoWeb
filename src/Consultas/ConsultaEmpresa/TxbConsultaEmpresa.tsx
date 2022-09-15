@@ -29,7 +29,7 @@ const TxbConsultaEmpresa: FunctionComponent = () => {
       {isModalEmpresaPopupOpen && (
         <PortalPopup
           overlayColor="rgba(113, 113, 113, 0.3)"
-          placement="Centered"
+          placement="Top center"
           onOutsideClick={closeModalEmpresaPopup}
         >
           <ModalEmpresa onClose={closeModalEmpresaPopup} TamanhoModail={TamanhoModais.Grande}/>

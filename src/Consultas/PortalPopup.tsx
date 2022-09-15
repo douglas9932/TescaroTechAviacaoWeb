@@ -50,6 +50,7 @@ const PortalPopup: FunctionComponent<PopupProps> = ({
         break;
       case "Top center":
         style.alignItems = "center";
+        style.paddingTop = "60px" 
         break;
       case "Top right":
         style.alignItems = "flex-end";

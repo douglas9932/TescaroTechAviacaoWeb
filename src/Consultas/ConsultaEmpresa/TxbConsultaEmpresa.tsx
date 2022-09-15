@@ -2,6 +2,7 @@ import { FunctionComponent, useState, useCallback } from "react";
 import ModalEmpresa from "./ModalEmpresa";
 import PortalPopup from "../PortalPopup";
 import styles from "../CssGeral/TxbConsultas.module.css";
+import { TamanhoModais } from "../../Enuns/EnumTamanhoModal";
 
 const TxbConsultaEmpresa: FunctionComponent = () => {
   const [isModalEmpresaPopupOpen, setModalEmpresaPopupOpen] = useState(false);
@@ -31,7 +32,7 @@ const TxbConsultaEmpresa: FunctionComponent = () => {
           placement="Centered"
           onOutsideClick={closeModalEmpresaPopup}
         >
-          <ModalEmpresa onClose={closeModalEmpresaPopup} />
+          <ModalEmpresa onClose={closeModalEmpresaPopup} TamanhoModail={TamanhoModais.Grande}/>
         </PortalPopup>
       )}
     </>

@@ -2,6 +2,7 @@ import { FunctionComponent, useState, useCallback } from "react";
 import ModalUsuario from "./ModalUsuario";
 import PortalPopup from "../PortalPopup";
 import styles from "./Css/BtnOpenModalUsuario.module.css";
+import { TamanhoModais } from "../../Enuns/EnumTamanhoModal";
 
 const BtnOpenModalUsuario: FunctionComponent = () => {
   const [isModalUsuarioPopupOpen, setModalUsuarioPopupOpen] = useState(false);
@@ -28,7 +29,7 @@ const BtnOpenModalUsuario: FunctionComponent = () => {
           placement="Centered"
           onOutsideClick={closeModalUsuarioPopup}
         >
-          <ModalUsuario onClose={closeModalUsuarioPopup} />
+          <ModalUsuario onClose={closeModalUsuarioPopup} TamanhoModail={TamanhoModais.Grande}/>
         </PortalPopup>
       )}
     </>

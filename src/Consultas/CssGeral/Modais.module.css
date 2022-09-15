@@ -1,0 +1,12 @@
+.ModalGrande {
+    width: 90%;
+    height: 80%;
+  }
+  .ModalMedio {
+    width: 60%;
+    height: 50%;
+  }
+  .ModalPequeno {
+    width: 40%;
+    height: 30%;
+  }

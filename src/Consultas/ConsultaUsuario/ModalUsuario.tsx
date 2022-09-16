@@ -8,22 +8,43 @@ type ModalUsuarioType = {
   TamanhoModail: TamanhoModais;
 };
 
-let LetModal = document.getElementById("Modal");
 
-const ModalUsuario: FunctionComponent<ModalUsuarioType> = ({ onClose }) => {
+
+const ModalUsuario: FunctionComponent<ModalUsuarioType> = ({ onClose ,TamanhoModail}) => {
+
   useEffect(() => {
+
+    let LetModal = document.getElementById("Modal");
     
+    if(LetModal !=null)
+    {      
+      if(TamanhoModail == TamanhoModais.Grande)
+      {
+        LetModal.classList.remove(CssModais.Modal);
+        LetModal.classList.add(CssModais.ModalGrande);
+      }
+      else if(TamanhoModail == TamanhoModais.Medio)
+      {
+        LetModal.classList.remove(CssModais.Modal);
+        LetModal.classList.add(CssModais.ModalMedio);
+      }
+      else if(TamanhoModail == TamanhoModais.Pequeno)
+      {
+        LetModal.classList.remove(CssModais.Modal);
+        LetModal.classList.add(CssModais.ModalPequeno);
+      }    
+    }
   });
-  
   return (
-    <div id="Modal" className={styles.modalUsuarioDiv + " " + CssModais.ModalPequeno}>
+    <div id="Modal" className={styles.modalUsuarioDiv + " " + CssModais.Modal}>
       <button className={styles.closeButton} onClick={onClose}>
         <button className={styles.xButton} onClick={onClose}>
           X
         </button>
       </button>
     </div>
-  );
+  ); 
+  
 };
 
 export default ModalUsuario;

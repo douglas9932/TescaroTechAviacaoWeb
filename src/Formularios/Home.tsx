@@ -1,8 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Button } from '../Components/Buttons/Button';
-import BtnOpenModalEmpresa from '../Consultas/ConsultaEmpresa/BtnOpenModalEmpresa';
 import TxbConsultaEmpresa from '../Consultas/ConsultaEmpresa/TxbConsultaEmpresa';
-import BtnOpenModalUsuario from '../Consultas/ConsultaUsuario/BtnOpenModalUsuario';
 import TxbConsultaUsuario from '../Consultas/ConsultaUsuario/TxbConsultaUsuario';
 import { Master } from './Master';
 
@@ -31,12 +29,11 @@ export const Home: FunctionComponent = () => {
       <button onClick={a}>BTN1</button>
       <button onClick={b}>BTN2</button>
       <button onClick={c}>BTN3</button>
-      <BtnOpenModalEmpresa/>
       <br/>
-      <BtnOpenModalUsuario/>
-      <br/>
+      <a>Empresa</a>
       <TxbConsultaEmpresa/>
       <br/>
+      <a>Usuario</a>
       <TxbConsultaUsuario/>
       <br/>
       <div id="Conteudo">

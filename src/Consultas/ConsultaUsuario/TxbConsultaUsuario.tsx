@@ -29,7 +29,7 @@ const TxbConsultaUsuario: FunctionComponent = () => {
       {isModalUsuarioPopupOpen && (
         <PortalPopup
           overlayColor="rgba(113, 113, 113, 0.3)"
-          placement="Centered"
+          placement="Top center"
           onOutsideClick={closeModalUsuarioPopup}
         >
           <ModalUsuario onClose={closeModalUsuarioPopup} TamanhoModail={TamanhoModais.Medio}/>

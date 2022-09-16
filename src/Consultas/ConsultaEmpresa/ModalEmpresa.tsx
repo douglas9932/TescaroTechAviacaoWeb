@@ -8,11 +8,32 @@ type ModalEmpresaType = {
   TamanhoModail: TamanhoModais;
 };
 
-let LetModal = document.getElementById("Modal");
 
-const ModalEmpresa: FunctionComponent<ModalEmpresaType> = ({ onClose }) => {
+
+const ModalEmpresa: FunctionComponent<ModalEmpresaType> = ({ onClose ,TamanhoModail}) => {
+
   useEffect(() => {
-
+    
+    let LetModal = document.getElementById("Modal");
+    
+    if(LetModal !=null)
+    {      
+      if(TamanhoModail == TamanhoModais.Grande)
+      {
+        LetModal.classList.remove(CssModais.Modal);
+        LetModal.classList.add(CssModais.ModalGrande);
+      }
+      else if(TamanhoModail == TamanhoModais.Medio)
+      {
+        LetModal.classList.remove(CssModais.Modal);
+        LetModal.classList.add(CssModais.ModalMedio);
+      }
+      else if(TamanhoModail == TamanhoModais.Pequeno)
+      {
+        LetModal.classList.remove(CssModais.Modal);
+        LetModal.classList.add(CssModais.ModalPequeno);
+      }    
+    }
   });
 
   return (

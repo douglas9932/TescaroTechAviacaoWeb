@@ -37,11 +37,22 @@ const ModalUsuario: FunctionComponent<ModalUsuarioType> = ({ onClose ,TamanhoMod
   });
   return (
     <div id="Modal" className={styles.modalUsuarioDiv + " " + CssModais.Modal}>
-      <button className={styles.closeButton} onClick={onClose}>
-        <button className={styles.xButton} onClick={onClose}>
-          X
+      <div className={CssModais.TamanhoModal}>
+      <div className={CssModais.Nav}>
+      Nav
+        <button className={styles.closeButton} onClick={onClose}>
+          <button className={styles.xButton} onClick={onClose}>
+            X
+          </button>
         </button>
-      </button>
+      </div>
+      <div className={CssModais.Body}>
+      Body
+      </div>
+      <div className={CssModais.Footer}>
+      Footer
+      </div>
+      </div>
     </div>
   ); 
   

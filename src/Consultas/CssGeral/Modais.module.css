@@ -15,3 +15,35 @@
   width: 50%;
   height: 40%;
 }
+
+
+:root{
+  --TamanhoNav: 30px;
+  --TamanhoFooter: 15px;
+}
+.TamanhoModal{
+  height: 100%;
+  width: 100%;
+}
+.Nav{
+  display: flex;
+  position:relative;
+  height: var(--TamanhoNav);
+  width: 100%;
+  top: 0px;
+  background-color: brown;
+}
+.Body{
+  display: flex;
+  width: 100%;
+  height: calc(100% - calc(var(--TamanhoNav) + var(--TamanhoFooter)));
+  background-color: bisque;
+}
+.Footer{
+  display: flex;
+  position:relative;
+  height: var(--TamanhoFooter);
+  width: 100%;
+  bottom:0px;
+  background-color: blue;
+}

@@ -1,15 +1,18 @@
 .Modal {
   width: 0px;
   height: 0px;
+  border-radius: 10px;
 }
 
 .ModalGrande {
     width: 90%;
     height: 80%;
+    border-radius: 10px;
 }
 .ModalMedio {
   width: 70%;
   height: 60%;
+  border-radius: 10px;
 }
 .ModalPequeno {
   width: 50%;
@@ -22,21 +25,32 @@
   --TamanhoFooter: 15px;
 }
 .TamanhoModal{
+  display: flex;
   height: 100%;
   width: 100%;
+  flex-direction: column;
+  
 }
 .Nav{
   display: flex;
   position:relative;
   height: var(--TamanhoNav);
   width: 100%;
+  align-items: center;
+  padding-left: 2%;
   top: 0px;
-  background-color: brown;
+  background-color: white;
+}
+.Div{
+  width: 100%;
+  height: 2px;
+  background-color: #ff5900;
 }
 .Body{
-  display: flex;
-  width: 100%;
-  height: calc(100% - calc(var(--TamanhoNav) + var(--TamanhoFooter)));
+  align-self: stretch;
+  position: relative;
+  overflow: hidden;
+  flex: 1;  
   background-color: bisque;
 }
 .Footer{
@@ -45,5 +59,23 @@
   height: var(--TamanhoFooter);
   width: 100%;
   bottom:0px;
-  background-color: blue;
+  background-color: white;
+}
+.ButtonClose {
+  position: absolute;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  right: 10px;
+  justify-content: flex-end;
+  height: 30px;
+  width: 30px;
+}
+.ButtonClose img{
+  display: flex;
+  width: 100%;
+  height: 100%;
 }

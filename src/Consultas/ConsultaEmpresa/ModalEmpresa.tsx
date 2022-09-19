@@ -12,8 +12,7 @@ type ModalEmpresaType = {
 
 const ModalEmpresa: FunctionComponent<ModalEmpresaType> = ({ onClose ,TamanhoModail}) => {
 
-  useEffect(() => {
-    
+  useEffect(() => {    
     let LetModal = document.getElementById("Modal");
     
     if(LetModal !=null)
@@ -38,11 +37,21 @@ const ModalEmpresa: FunctionComponent<ModalEmpresaType> = ({ onClose ,TamanhoMod
 
   return (
     <div id="Modal" className={styles.modalEmpresaDiv + " " + CssModais.ModalGrande}>
-      <button className={styles.closeButton} onClick={onClose}>
-        <button className={styles.xButton} onClick={onClose}>
-          X
-        </button>
-      </button>
+       <div className={CssModais.TamanhoModal}>
+        <div className={CssModais.Nav}>
+          Nome da Consulta
+          <button className={CssModais.ButtonClose} onClick={onClose}>
+            <img src="../ImagensModais/ImgCloseModal.svg" />
+          </button>
+        </div>
+        <div className={CssModais.Div}></div>
+        <div className={CssModais.Body}>
+          Body
+        </div>
+        <div className={CssModais.Footer}>
+          Footer
+        </div>
+      </div>
     </div>
   );
 };

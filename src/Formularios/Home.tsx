@@ -25,20 +25,7 @@ function c ()
 export const Home: FunctionComponent = () => {
   return (
     <Master>
-      <a >HOMEEEEEEasdasdaasd</a>
-      <button onClick={a}>BTN1</button>
-      <button onClick={b}>BTN2</button>
-      <button onClick={c}>BTN3</button>
-      <br/>
-      <a>Empresa</a>
-      <TxbConsultaEmpresa/>
-      <br/>
-      <a>Usuario</a>
-      <TxbConsultaUsuario/>
-      <br/>
-      <div id="Conteudo">
-        <a>ssssssss</a>
-      </div>
+      
     </Master>
   );
 };

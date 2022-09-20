@@ -7,6 +7,7 @@ import {
 import { FrmLogin } from "./Formularios/FrmLogin";
 import { useEffect } from "react";
 
+import {HomeDev} from "./Formularios/HomeDev";
 import {Home} from "./Formularios/Home";
 
 function App() {
@@ -34,6 +35,11 @@ function App() {
         title = "Home";
         metaDescription = "Home";
         break;
+      case "/HomeDev":
+        title = "HomeDev";
+        metaDescription = "HomeDev";
+        break;
+     
     }
 
     if (title) {
@@ -54,6 +60,7 @@ function App() {
     <Routes>
       <Route path="/" element={<FrmLogin />} />
       <Route path="/Home" element={<Home />} />
+      <Route path="/HomeDev" element={<HomeDev />} />
     </Routes>
   );
 }

@@ -74,8 +74,7 @@ export const FrmLogin: FunctionComponent = () => {
                   <div className={styles.txtEntrarDiv}>{`Entrar `}</div>
                 </button>
                 <a className={styles.txtEsqueceuASenha}>Esqueci Minha Senha</a>
-              </div>
-              
+              </div>              
           </div> 
         </div> 
       </form>

@@ -5,6 +5,13 @@
 	--Branco: #fff;
 	--Branco2: #dedede;
 	--CorFoco: rgb(234 76 137);
+	--CorLabel: #fff;
+}
+.Label{
+	display: flex;
+	height:3%;
+	color: var(--CorLabel);
+	padding-left: 15px;
 }
 .TxbConsulta {
 	position: relative;

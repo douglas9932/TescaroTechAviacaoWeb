@@ -17,7 +17,7 @@ const TxbConsultaUsuario: FunctionComponent = () => {
 
   return (
     <>    
-    <a>Usuario</a>
+    <a className={styles.Label}>Usuario</a>
     <div className={styles.TxbConsulta}>
         <div className={styles.Input}>
             <input type="" name="" />

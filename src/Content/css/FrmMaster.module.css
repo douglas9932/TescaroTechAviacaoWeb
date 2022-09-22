@@ -77,9 +77,11 @@
   flex-shrink: 0;
   overflow: hidden;
 }
-.corpoDiv {
+.corpoDiv {  
   flex: 1;
   background-color: #81ffa4;
+  padding: 4px;
+  gap:8px;
 }
 .bodyDiv,
 .frmMasterDiv {

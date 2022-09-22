@@ -1,17 +1,27 @@
 :root{
 	--Height: 30px;
-	--Width: 50%;
+	/* --Width: 50%; */
+	--Width:100%;
 	--WidthInput: 100%;
 	--Branco: #fff;
 	--Branco2: #dedede;
 	--CorFoco: rgb(234 76 137);
-	--CorLabel: #fff;
+	--CorLabel: rgb(255, 255, 255);
+}
+.PnlPainel{	
+	display: flex;
+	flex-direction: column;
+	gap:4px;
 }
 .Label{
-	display: flex;
-	height:3%;
+	display: block;
+	height:15px;
+	width: 0px;
 	color: var(--CorLabel);
 	padding-left: 15px;
+	font-size: 14px;
+	font-family: 'Quicksand';
+	font-weight: bold;
 }
 .TxbConsulta {
 	position: relative;
@@ -57,7 +67,7 @@
 }
 .TxbConsulta .Buttons .Buscar{
 	cursor: pointer;
-	width: var(--Height);
+	width: var(--Width);
 	height: 100%;
 	border-style: none;
 	background-color:var(--Branco);
@@ -65,7 +75,7 @@
 }
 .TxbConsulta .Buttons .Limpar{
 	cursor: pointer;
-	width: var(--Height);
+	width: var(--Width);
 	height: 100%;
 	border-radius: 0px 10px 10px 0px;
 	border-style: none;
@@ -78,3 +88,39 @@
 	padding-left: 5px;
 	padding-right: 5px;
 }
+/* .col1{
+	width:8.33;
+}
+.col2{
+	width:16.66%;
+}
+.col3{
+	width:25%;
+}
+.col4{
+	width:33.33%;
+}
+.col5{
+	width:41.66%;
+}
+.col6{
+	width:50%;
+}
+.col7{
+	width:58.33%;
+}
+.col8{
+	width:66.66%;
+}
+.col9{
+	width:75%;
+}
+.col10{
+	width:83.33%;
+}
+.col11{
+	width:91.66%;
+}
+.col12{
+	width:100%;
+} */

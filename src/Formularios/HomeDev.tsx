@@ -1,18 +1,15 @@
-import React, { FunctionComponent } from 'react';
-import { Button } from '../Components/Buttons/Button';
+import { FunctionComponent } from 'react';
 import TxbConsultaEmpresa from '../Consultas/ConsultaEmpresa/TxbConsultaEmpresa';
 import TxbConsultaUsuario from '../Consultas/ConsultaUsuario/TxbConsultaUsuario';
 import { Master } from './Master';
 
 function a ()
-{ 
- 
+{  
   sessionStorage.setItem("User", "aaaaaa")
   sessionStorage.setItem("User2", "bbbbb")
 }
 function b ()
-{
-  
+{  
  var a = sessionStorage.getItem("User")
  var b =sessionStorage.getItem("User2")
 }
@@ -30,8 +27,8 @@ export const HomeDev: FunctionComponent = () => {
       <button onClick={b}>BTN2</button>
       <button onClick={c}>BTN3</button>
       <br/>
-      <TxbConsultaEmpresa/>
-      <br/>
+      <TxbConsultaEmpresa/> 
+      <TxbConsultaEmpresa/>      
       <TxbConsultaUsuario/>
       <br/>
       <div id="Conteudo">

@@ -17,15 +17,17 @@ const TxbConsultaEmpresa: FunctionComponent = () => {
 
   return (
     <>    
-    <a className={styles.Label}>Empresa</a>
-    <div className={styles.TxbConsulta}>
-        <div className={styles.Input}>
-            <input type="" name="" />
-            <div className={styles.Buttons}>
-                <button className={styles.Buscar} tabIndex={-1} onClick={openModalEmpresaPopup}><img src="./Buscar.svg" /></button>
-                <button className={styles.Limpar} tabIndex={-1}><img src="./Clear.svg" /></button>
-            </div>
-        </div>		
+    <div className={styles.PnlPainel}>
+      <a className={styles.Label}>Empresa</a>
+      <div className={styles.TxbConsulta}>
+          <div className={styles.Input}>
+              <input type="" name="" />
+              <div className={styles.Buttons}>
+                  <button className={styles.Buscar} tabIndex={-1} onClick={openModalEmpresaPopup}><img src="./Buscar.svg" /></button>
+                  <button className={styles.Limpar} tabIndex={-1}><img src="./Clear.svg" /></button>
+              </div>
+          </div>	
+      </div>
     </div>
       {isModalEmpresaPopupOpen && (
         <PortalPopup

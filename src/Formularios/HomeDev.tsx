@@ -27,9 +27,17 @@ export const HomeDev: FunctionComponent = () => {
       <button onClick={b}>BTN2</button>
       <button onClick={c}>BTN3</button>
       <br/>
-      <TxbConsultaEmpresa/> 
-      <TxbConsultaEmpresa/>      
-      <TxbConsultaUsuario/>
+      <div className="Linha">
+        <TxbConsultaEmpresa Css="col_sm_12  col_md_6  col_lg_3 col_xl_2"/>
+        <TxbConsultaUsuario Css="col_sm_12  col_md_6  col_lg_3 col_xl_3"/>
+        <TxbConsultaEmpresa Css="col_sm_12  col_md_6  col_lg_3 col_xl_4"/>
+        <TxbConsultaUsuario Css="col_sm_12  col_md_6  col_lg_3 col_xl_3"/>
+      </div>
+      <div></div>
+      <div></div>
+        <TxbConsultaUsuario Css="col_sm_12  col_md_6  col_lg_3  col_xl_2"/> 
+        <TxbConsultaEmpresa Css="col_sm_12  col_md_6  col_lg_3  col_xl_2"/>      
+        <TxbConsultaUsuario Css="col_sm_12  col_md_6  col_lg_3  col_xl_2"/>
       <br/>
       <div id="Conteudo">
         <a>ssssssss</a>

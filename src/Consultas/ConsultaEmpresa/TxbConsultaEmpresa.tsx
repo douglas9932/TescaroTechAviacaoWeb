@@ -4,8 +4,13 @@ import PortalPopup from "../PortalPopup";
 import styles from "../CssGeral/TxbConsultas.module.css";
 import { TamanhoModais } from "../../Enuns/EnumTamanhoModal";
 
-const TxbConsultaEmpresa: FunctionComponent = () => {
+type PropsComponente = {
+  Css: string;
+}
+const TxbConsultaEmpresa: FunctionComponent<PropsComponente> = (Css) => {
   const [isModalEmpresaPopupOpen, setModalEmpresaPopupOpen] = useState(false);
+
+  const [TxbEmpresa, setEmpresa] = useState("");
 
   const openModalEmpresaPopup = useCallback(() => {
     setModalEmpresaPopupOpen(true);
@@ -15,16 +20,20 @@ const TxbConsultaEmpresa: FunctionComponent = () => {
     setModalEmpresaPopupOpen(false);
   }, []);
 
+  const ClearComponent = useCallback(() =>{
+    setEmpresa("");
+  }, []);
+
   return (
     <>    
-    <div className={styles.PnlPainel}>
+    <div className={styles.PnlPainel + " " + Css.Css}>
       <a className={styles.Label}>Empresa</a>
       <div className={styles.TxbConsulta}>
           <div className={styles.Input}>
-              <input type="" name="" />
+              <input type="" name="" value={TxbEmpresa} onChange={e=>setEmpresa(e.target.value)}/>
               <div className={styles.Buttons}>
                   <button className={styles.Buscar} tabIndex={-1} onClick={openModalEmpresaPopup}><img src="./Buscar.svg" /></button>
-                  <button className={styles.Limpar} tabIndex={-1}><img src="./Clear.svg" /></button>
+                  <button className={styles.Limpar} tabIndex={-1} onClick={ClearComponent}><img src="./Clear.svg" /></button>
               </div>
           </div>	
       </div>

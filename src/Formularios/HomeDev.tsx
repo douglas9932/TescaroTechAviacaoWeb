@@ -1,3 +1,4 @@
+import { info } from 'console';
 import { FunctionComponent, useEffect, useState } from 'react';
 import TxbConsultaEmpresa from '../Consultas/ConsultaEmpresa/TxbConsultaEmpresa';
 import TxbConsultaUsuario from '../Consultas/ConsultaUsuario/TxbConsultaUsuario';
@@ -20,6 +21,17 @@ function c ()
 }
 
 export const HomeDev: FunctionComponent = () => {
+  const [Users, setUsers] = useState({});
+  const [Text, setText] = useState("");
+
+  useEffect(()=>{
+    fetch('https://localhost:44333/api/Usuario/GetUsuarios')
+    .then((response) =>  alert(response))
+    .then((response) => console.log(response))
+
+    alert(Users)
+  },[]);
+
   return (
     <Master>
       <a >HOMEEEEEEasdasdaasd</a>
@@ -40,14 +52,8 @@ export const HomeDev: FunctionComponent = () => {
         <TxbConsultaUsuario Css="col_sm_12  col_md_6  col_lg_3  col_xl_2"/>
       <br/>
       <div id="Conteudo">
-        <a>ssssssss</a>
+        <a>ssssssss</a>  
       </div>
     </Master>
   );
 };
-
-
-function setUser(data: any): any {
-  throw new Error('Function not implemented.');
-}
-

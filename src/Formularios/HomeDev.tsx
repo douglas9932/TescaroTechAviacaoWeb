@@ -1,10 +1,10 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import TxbConsultaEmpresa from '../Consultas/ConsultaEmpresa/TxbConsultaEmpresa';
 import TxbConsultaUsuario from '../Consultas/ConsultaUsuario/TxbConsultaUsuario';
 import { Master } from './Master';
 
 function a ()
-{  
+{    
   sessionStorage.setItem("User", "aaaaaa")
   sessionStorage.setItem("User2", "bbbbb")
 }
@@ -46,4 +46,8 @@ export const HomeDev: FunctionComponent = () => {
   );
 };
 
+
+function setUser(data: any): any {
+  throw new Error('Function not implemented.');
+}
 

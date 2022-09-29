@@ -1,11 +1,20 @@
-import { info } from 'console';
 import { FunctionComponent, useEffect, useState } from 'react';
+import Api from '../API/Api';
 import TxbConsultaEmpresa from '../Consultas/ConsultaEmpresa/TxbConsultaEmpresa';
 import TxbConsultaUsuario from '../Consultas/ConsultaUsuario/TxbConsultaUsuario';
 import { Master } from './Master';
 
+let users: never[]=[];
 function a ()
 {    
+  Api
+  .get("/api/Usuario/GetUsuarios")
+  .then((response) => users=(response.data))
+  .catch((err) => {
+    console.log("ops! ocorreu um erro" + err);
+  });
+  console.log(users)
+  
   sessionStorage.setItem("User", "aaaaaa")
   sessionStorage.setItem("User2", "bbbbb")
 }
@@ -21,17 +30,6 @@ function c ()
 }
 
 export const HomeDev: FunctionComponent = () => {
-  const [Users, setUsers] = useState({});
-  const [Text, setText] = useState("");
-
-  useEffect(()=>{
-    fetch('https://localhost:44333/api/Usuario/GetUsuarios')
-    .then((response) =>  alert(response))
-    .then((response) => console.log(response))
-
-    alert(Users)
-  },[]);
-
   return (
     <Master>
       <a >HOMEEEEEEasdasdaasd</a>

@@ -1,4 +1,6 @@
+import internal from "stream";
+
 export class PessoaBO{
-	nome: string | undefined;
-	ID: number| undefined;
+	Nome: string | undefined;
+	ID: internal| undefined;
 }

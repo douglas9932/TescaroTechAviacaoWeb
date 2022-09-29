@@ -1,10 +1,11 @@
 import { FunctionComponent, useEffect, useState } from 'react';
 import Api from '../API/Api';
+import { PessoaBO } from '../ClassBO/PessoaBO';
 import TxbConsultaEmpresa from '../Consultas/ConsultaEmpresa/TxbConsultaEmpresa';
 import TxbConsultaUsuario from '../Consultas/ConsultaUsuario/TxbConsultaUsuario';
 import { Master } from './Master';
 
-let users: never[]=[];
+let users: PessoaBO[]= [];
 function a ()
 {    
   Api
@@ -13,6 +14,10 @@ function a ()
   .catch((err) => {
     console.log("ops! ocorreu um erro" + err);
   });
+  console.log(users)
+  
+  users[0].Nome = "TESTE";
+
   console.log(users)
   
   sessionStorage.setItem("User", "aaaaaa")

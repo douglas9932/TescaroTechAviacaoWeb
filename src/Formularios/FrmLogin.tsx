@@ -1,33 +1,46 @@
-import { FunctionComponent, useCallback, useState } from "react";
+import { FunctionComponent, useState } from "react";
 import { TextField } from "@mui/material";
 import styles from "../Content/css/FrmLogin.module.css";
 import { useNavigate } from "react-router-dom";
+import UserService from "../API/UserService";
+import { validarUsuarioSenha } from "./Controllers/FrmLoginController";
 
-
-
-
-
-
+const userService = new UserService()
 
 export const FrmLogin: FunctionComponent = () => {  
- 
+  const [loading, setLoading] = useState(false)
+  const navigate = useNavigate();
+
   const [Usuario, setUsuario] = useState("");
   const [Senha, setSenha] = useState("");
-  
-  const navigate = useNavigate();
-    
-  function BtnEntrarClick(){
-    if(Usuario === "")
-    {
-      navigate("/Home");
-    }
-    else if(Usuario === "dev")
-    {
-      navigate("/HomeDev");
-    }
-  }
 
   
+  const handleSubmit = async (event: { preventDefault: () => void; }) => {
+    event.preventDefault();
+    try {
+      if(validarUsuarioSenha(Usuario, Senha))
+      {
+        setLoading(true)
+        const response = await userService.Validarlogin(Usuario,Senha)
+        console.log('response do Login', response)
+        if (response === true) {
+          alert('usuário Logado com Sucesso')
+          navigate('/Home')
+        }else{
+          alert('Credenciais incorretas')
+          navigate('/')
+        }
+        setLoading(false)
+      }else
+      {
+        alert("Preencha o Usuario e Senha")
+      }
+   
+    }
+    catch (err) {
+      alert('Algo deu errado com o Login' + err)
+    }
+  }
 
   return (
     <div className={styles.frmLoginDiv}>
@@ -38,8 +51,7 @@ export const FrmLogin: FunctionComponent = () => {
           alt=""
           src="ipanema.svg"
         /> 
-        </div>     
-       
+        </div> 
         <div className={styles.cardLoginDiv}>          
             <div className={styles.cardLogincontentDiv}>
 
@@ -70,7 +82,7 @@ export const FrmLogin: FunctionComponent = () => {
                 value={Senha}
                 onChange={(e)=>setSenha(e.target.value)}
               />
-                <button className={styles.btnEntrarButton} onClick={BtnEntrarClick}>
+                <button className={styles.btnEntrarButton} onClick={handleSubmit}>
                   <div className={styles.txtEntrarDiv}>{`Entrar `}</div>
                 </button>
                 <a className={styles.txtEsqueceuASenha}>Esqueci Minha Senha</a>

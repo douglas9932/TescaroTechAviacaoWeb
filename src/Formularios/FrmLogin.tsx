@@ -1,29 +1,20 @@
-import { FunctionComponent, useCallback, useEffect, useState } from "react";
+import { FunctionComponent, useState } from "react";
 import { TextField } from "@mui/material";
 import styles from "../Content/css/FrmLogin.module.css";
 import { useNavigate } from "react-router-dom";
 import UserService from "../API/UserService";
 import { validarUsuarioSenha } from "./Controllers/FrmLoginController";
-import { ETipoMensagem } from "../Enuns/ETipoMensagem";
-import Mensagem from "./Mensagem/Mensagem";
 
 const userService = new UserService()
-let xMensagem: JSX.Element;
 
 export const FrmLogin: FunctionComponent = () => {  
-  const [isMensagem, setMensagem] = useState(false);
-  const MostrarMensagem = useCallback(() => {
-    setMensagem(true);
-  }, []);
-
-  const [loading, setLoading] = useState(false)
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false)
 
   const [Usuario, setUsuario] = useState("");
   const [Senha, setSenha] = useState("");
-
   
-  const handleSubmit = async (event: { preventDefault: () => void; }) => {
+  const btnEntrarClick = async (event: { preventDefault: () => void; }) => {
     event.preventDefault();
     try {
       if(validarUsuarioSenha(Usuario, Senha))
@@ -36,23 +27,20 @@ export const FrmLogin: FunctionComponent = () => {
           navigate('/Home')
         }else
         {
-          xMensagem = (<Mensagem Mensagem={"Credenciais incorretas"} TipoMensagem={ETipoMensagem.Aviso}/>);
-          MostrarMensagem();
+          alert("Credenciais incorretas");
           navigate('/')
         }
         setLoading(false)
       }else
       {
-        xMensagem = (<Mensagem Mensagem={"Preencha o Usuario e Senha"} TipoMensagem={ETipoMensagem.Aviso} onClose={MostrarMensagem}/>);
-        MostrarMensagem();
-      }
-   
+        alert("Preencha o Usuario e Senha");
+      }   
     }
     catch (err) {
-      xMensagem = (<Mensagem Mensagem={err} TipoMensagem={ETipoMensagem.Erro}/>);
-      MostrarMensagem();
+      alert(err);
     }
   }
+
   return (
     <>
     <div className={styles.frmLoginDiv}>
@@ -93,7 +81,7 @@ export const FrmLogin: FunctionComponent = () => {
                 value={Senha}
                 onChange={(e)=>setSenha(e.target.value)}
               />
-                <button className={styles.btnEntrarButton} onClick={handleSubmit}>
+                <button className={styles.btnEntrarButton} onClick={btnEntrarClick}>
                   <div className={styles.txtEntrarDiv}>{`Entrar `}</div>
                 </button>
                 <a className={styles.txtEsqueceuASenha}>Esqueci Minha Senha</a>
@@ -101,8 +89,7 @@ export const FrmLogin: FunctionComponent = () => {
           </div> 
         </div> 
       </form>
-    </div>
-    {isMensagem? (xMensagem): null}        
+    </div>    
     </>
   );
 };

@@ -32,7 +32,6 @@ const validarUsuarioSenha=(parUsuario:string,parSenha:string)=>{
   }
   return true;
 }
-
 export {
   validarEmail,
   validarSenha,

@@ -31,9 +31,10 @@ export const Home: FunctionComponent = () => {
   }
   return (
     <>
-      <Master>    
+      <Master> 
+        <button onClick={BtnConfirm} type="submit">Click</button>
       </Master>
-      {msg}
+      {isMessage? {msg}:null}
     </>
   );
 };

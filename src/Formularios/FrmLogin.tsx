@@ -4,17 +4,18 @@ import styles from "../Content/css/FrmLogin.module.css";
 import { useNavigate } from "react-router-dom";
 import UserService from "../API/UserService";
 import { validarUsuarioSenha } from "./Controllers/FrmLoginController";
+import Mensagem from "./Mensagem/Mensagem";
+import { ETipoMensagem } from "../Enuns/ETipoMensagem";
 
 const userService = new UserService()
-
+let msg: JSX.Element;
 export const FrmLogin: FunctionComponent = () => {  
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false)
-
   const [Usuario, setUsuario] = useState("");
   const [Senha, setSenha] = useState("");
   
-  const btnEntrarClick = async (event: { preventDefault: () => void; }) => {
+  const btnEntrarClick = async (event: { preventDefault: () => void;}) => {
     event.preventDefault();
     try {
       if(validarUsuarioSenha(Usuario, Senha))
@@ -27,13 +28,14 @@ export const FrmLogin: FunctionComponent = () => {
           navigate('/Home')
         }else
         {
-          alert("Credenciais incorretas");
-          navigate('/')
+          //alert("Credenciais incorretas"); 
+          msg = <Mensagem Mensagem={"Credenciais incorretas"} TipoMensagem={ETipoMensagem.Aviso}/>
+          //e.target
         }
         setLoading(false)
       }else
       {
-        alert("Preencha o Usuario e Senha");
+        alert("Preencha o Usuario e Senha");               
       }   
     }
     catch (err) {
@@ -81,7 +83,7 @@ export const FrmLogin: FunctionComponent = () => {
                 value={Senha}
                 onChange={(e)=>setSenha(e.target.value)}
               />
-                <button className={styles.btnEntrarButton} onClick={btnEntrarClick}>
+                <button className={styles.btnEntrarButton} type="submit" onClick={btnEntrarClick}>
                   <div className={styles.txtEntrarDiv}>{`Entrar `}</div>
                 </button>
                 <a className={styles.txtEsqueceuASenha}>Esqueci Minha Senha</a>
@@ -89,7 +91,8 @@ export const FrmLogin: FunctionComponent = () => {
           </div> 
         </div> 
       </form>
-    </div>    
+    </div> 
+    {msg}   
     </>
   );
 };

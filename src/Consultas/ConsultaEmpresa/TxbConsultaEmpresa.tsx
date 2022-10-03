@@ -1,6 +1,6 @@
 import { FunctionComponent, useState, useCallback } from "react";
 import ModalEmpresa from "./ModalEmpresa";
-import PortalPopup from "../PortalPopup";
+import PortalPopup from "../../Components/PortalPopup";
 import styles from "../CssGeral/TxbConsultas.module.css";
 import { TamanhoModais } from "../../Enuns/EnumTamanhoModal";
 

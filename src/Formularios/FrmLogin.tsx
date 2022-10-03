@@ -1,13 +1,21 @@
-import { FunctionComponent, useState } from "react";
+import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import { TextField } from "@mui/material";
 import styles from "../Content/css/FrmLogin.module.css";
 import { useNavigate } from "react-router-dom";
 import UserService from "../API/UserService";
 import { validarUsuarioSenha } from "./Controllers/FrmLoginController";
+import { ETipoMensagem } from "../Enuns/ETipoMensagem";
+import Mensagem from "./Mensagem/Mensagem";
 
 const userService = new UserService()
+let xMensagem: JSX.Element;
 
 export const FrmLogin: FunctionComponent = () => {  
+  const [isMensagem, setMensagem] = useState(false);
+  const MostrarMensagem = useCallback(() => {
+    setMensagem(true);
+  }, []);
+
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate();
 
@@ -23,26 +31,30 @@ export const FrmLogin: FunctionComponent = () => {
         setLoading(true)
         const response = await userService.Validarlogin(Usuario,Senha)
         console.log('response do Login', response)
-        if (response === true) {
-          alert('usuário Logado com Sucesso')
+        if (response === true) 
+        {
           navigate('/Home')
-        }else{
-          alert('Credenciais incorretas')
+        }else
+        {
+          xMensagem = (<Mensagem Mensagem={"Credenciais incorretas"} TipoMensagem={ETipoMensagem.Aviso}/>);
+          MostrarMensagem();
           navigate('/')
         }
         setLoading(false)
       }else
       {
-        alert("Preencha o Usuario e Senha")
+        xMensagem = (<Mensagem Mensagem={"Preencha o Usuario e Senha"} TipoMensagem={ETipoMensagem.Aviso} onClose={MostrarMensagem}/>);
+        MostrarMensagem();
       }
    
     }
     catch (err) {
-      alert('Algo deu errado com o Login' + err)
+      xMensagem = (<Mensagem Mensagem={err} TipoMensagem={ETipoMensagem.Erro}/>);
+      MostrarMensagem();
     }
   }
-
   return (
+    <>
     <div className={styles.frmLoginDiv}>
       <form className={styles.loginContentDivForm}>   
       <div className={styles.divimg}>
@@ -54,7 +66,6 @@ export const FrmLogin: FunctionComponent = () => {
         </div> 
         <div className={styles.cardLoginDiv}>          
             <div className={styles.cardLogincontentDiv}>
-
               <div className={styles.bloco1}>
                 <b className={styles.txtNomeEmpresaB}>TescaroTech</b>
                 <p className={styles.txtLoginP}>LOGIN</p>
@@ -91,5 +102,7 @@ export const FrmLogin: FunctionComponent = () => {
         </div> 
       </form>
     </div>
+    {isMensagem? (xMensagem): null}        
+    </>
   );
 };

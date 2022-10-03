@@ -1,12 +1,12 @@
-import React, { FunctionComponent } from 'react';
-import { Button } from '../Components/Buttons/Button';
-import TxbConsultaEmpresa from '../Consultas/ConsultaEmpresa/TxbConsultaEmpresa';
-import TxbConsultaUsuario from '../Consultas/ConsultaUsuario/TxbConsultaUsuario';
+import { FunctionComponent } from 'react';
+import { Button } from 'semantic-ui-react';
+import { ETipoMensagem } from '../Enuns/ETipoMensagem';
 import { Master } from './Master';
+import Mensagem from './Mensagem/Mensagem';
 
 function a ()
 { 
- 
+  <Mensagem Mensagem={"err"} TipoMensagem={ETipoMensagem.Erro}/>
   sessionStorage.setItem("User", "aaaaaa")
   sessionStorage.setItem("User2", "bbbbb")
 }
@@ -24,8 +24,8 @@ function c ()
 
 export const Home: FunctionComponent = () => {
   return (
-    <Master>
-      
+    <Master>     
+      <Mensagem Mensagem={"err"} TipoMensagem={ETipoMensagem.Erro}/> 
     </Master>
   );
 };

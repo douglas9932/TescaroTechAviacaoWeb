@@ -1,0 +1,122 @@
+.Mensagem {
+  background-color: transparent;
+  width: 30%;
+  min-height: 45%;
+  max-width: 95%;
+  padding-top: 70px;
+}
+.Body{  
+  border-radius: 15px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  flex: 1;  
+  background-color: #FFF;  
+  padding: 15px;
+  padding-top: 50px;
+  text-align: center;
+}
+.Icon{
+	position: absolute;
+  color: #fff;		
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+  top: -50px;
+	width: 95px;
+	height: 95px;
+	border-radius: 50%;
+	z-index: 999;
+	padding: 15px;
+  background: #FFF;
+	text-align: center;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+}
+.Imagem{
+  height: 100%;
+  width: 100%;
+}
+.CorPadrao{
+  background: #FFF;
+}
+.TextoMensagem{
+  max-height: 80%;
+  min-height: 80%;
+  height: auto;
+  padding: 20px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow:auto;
+  text-align: justify;
+}
+.Mensagem button{
+  font-size: 15px;
+  color: #fff;
+  position: relative;
+  min-height: 40px;
+	border-radius: 3px;
+  text-decoration: none;
+	transition: all 0.4s;
+	line-height: normal;
+	border: none;
+}
+.BotaoDone{   
+	background: #82ce34;
+  width: 70%;
+}
+.BotaoDone:hover{
+	background: #6fb32b;
+}
+.BotaoErro{   
+	background: #ef513a;
+  width: 70%;
+}
+.BotaoErro:hover{
+	background: #af3a28;
+}
+.BotaoAviso{   
+	background: #f2b600;
+  width: 70%;
+}
+.BotaoAviso:hover{
+	background: #b38602;
+}
+.BotoesConfirmacao{
+  display: flex;
+  flex-direction: row;
+  gap:10px
+}
+.BotaoConfirmar{   
+	background: #82ce34;
+  width: 70%;
+}
+.BotaoConfirmar:hover{
+	background: #6fb32b;
+}
+.BotaoCancelar{   
+	background: #ef513a;
+  width: 70%;
+}
+.BotaoCancelar:hover{
+	background: #af3a28;
+}
+
+@media screen and (width <= 992px){
+  .Mensagem {
+    width: 45%;
+    height: 45%;
+  }
+}
+@media screen and (width <= 768px){
+  .Mensagem {
+    width: 50%;
+    height: 50%;
+  }
+}
+@media screen and (width <= 586px){
+  .Mensagem {
+    width: 60%;
+    height: 50%;
+  }
+}

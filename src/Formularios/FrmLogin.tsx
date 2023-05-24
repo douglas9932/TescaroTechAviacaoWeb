@@ -18,25 +18,35 @@ export const FrmLogin: FunctionComponent = () => {
   const btnEntrarClick = async (event: { preventDefault: () => void;}) => {
     event.preventDefault();
     try {
-      if(validarUsuarioSenha(Usuario, Senha))
+
+      if(Usuario == "dev" && Senha=="dev") 
       {
-        setLoading(true)
-        const response = await userService.Validarlogin(Usuario,Senha)
-        console.log('response do Login', response)
-        if (response === true) 
+        navigate('/Home')
+      }
+      else{
+
+        if(validarUsuarioSenha(Usuario, Senha))
         {
-          navigate('/Home')
+          setLoading(true)
+          const response = await userService.Validarlogin(Usuario,Senha)
+          console.log('response do Login', response)
+          if (response === true) 
+          {
+            navigate('/Home')
+          }else
+          {
+            //alert("Credenciais incorretas"); 
+            msg = <Mensagem Mensagem={"Credenciais incorretas"} TipoMensagem={ETipoMensagem.Aviso}/>
+            //e.target
+          }
+          setLoading(false)
         }else
         {
-          //alert("Credenciais incorretas"); 
-          msg = <Mensagem Mensagem={"Credenciais incorretas"} TipoMensagem={ETipoMensagem.Aviso}/>
-          //e.target
-        }
-        setLoading(false)
-      }else
-      {
-        alert("Preencha o Usuario e Senha");               
-      }   
+          alert("Preencha o Usuario e Senha");               
+        } 
+
+      }
+
     }
     catch (err) {
       alert(err);

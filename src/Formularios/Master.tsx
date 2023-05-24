@@ -1,8 +1,12 @@
 
-import {FunctionComponent, useEffect, useState } from "react";
+import {FunctionComponent, useCallback, useEffect, useState } from "react";
 import styles from "../Content/css/FrmMaster.module.css";
 import { SideBar } from "../SideBar/Sidebar";
 import  '../Content/css/CssBase.css';
+import { ETipoMensagem } from "../Enuns/ETipoMensagem";
+import Mensagem from "./Mensagem/Mensagem";
+import PortalPopup from "../Components/PortalPopup";
+import { CamposMensagemBO } from "../ClassBO/CamposMensagemBO";
 
 function MenuHamburguer_Click()
 {
@@ -58,10 +62,33 @@ function FunctionSideBar (){
   }
 }
 
+type ModalMsg = {
+  MostrarMensagem: boolean;
+  FechaMensagem?: () => void|undefined;    
+  TextMensagem: string|undefined;
+  TipoMensagem: ETipoMensagem|undefined;
+};
 
-export const Master: FunctionComponent = ({
-children
+export const Master: FunctionComponent<ModalMsg> = ({FechaMensagem,
+children , MostrarMensagem, TextMensagem,TipoMensagem
 }) => {  
+
+  const [isMensagemNovaPopupOpen, setMensagemNovaPopupOpen] = useState(false);
+  
+  const closeMensagemNovaPopup = useCallback(() => {
+    setMensagemNovaPopupOpen(false);
+
+    if(FechaMensagem != null) {
+      FechaMensagem();
+    }
+    CamposMensagemBO.LimparMensagens();
+  }, []);
+
+  if(!isMensagemNovaPopupOpen && (MostrarMensagem && !isMensagemNovaPopupOpen)){
+    CamposMensagemBO.GetMessage();
+    setMensagemNovaPopupOpen(true);
+  }
+  
   useEffect(() => {
 
     function Page_OnLoad() 
@@ -108,8 +135,8 @@ children
   });
 
 
-
   return (
+    <>
      <div className={styles.frmMasterDiv}>
 
       <SideBar css={styles.SideBarDesktop.toString() + " " + styles.Open + " " + styles.menuAberto.toString()} label={""} />
@@ -123,5 +150,15 @@ children
         </div>
       </div>
    </div>
+   {isMensagemNovaPopupOpen && (
+        <PortalPopup
+          overlayColor="rgba(113, 113, 113, 0.3)"
+          placement="Centered"
+          onOutsideClick={closeMensagemNovaPopup}
+        >
+          <Mensagem onClose={closeMensagemNovaPopup} Mensagem={CamposMensagemBO.prototype.Mensagem} TipoMensagem={CamposMensagemBO.prototype.TipoMensagem} />
+        </PortalPopup>
+      )}
+   </>
   );   
 };

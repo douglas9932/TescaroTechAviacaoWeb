@@ -1,40 +1,49 @@
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent, useCallback, useState } from 'react';
 import { Button } from 'semantic-ui-react';
 import { ETipoMensagem } from '../Enuns/ETipoMensagem';
 import { Master } from './Master';
 import Mensagem from './Mensagem/Mensagem';
+import { CamposMensagemBO } from '../ClassBO/CamposMensagemBO';
 
 
 let msg: JSX.Element;
+
 export const Home: FunctionComponent = () => {
+
   const [isMessage, setMessage] = useState(false)
+  
+  const CloseMessage = useCallback(() => {
+    setMessage(false);
+  }, []);
   
   function BtnAlerta ()
   { 
-    msg = <Mensagem Mensagem={"Mensagem de Aviso"} TipoMensagem={ETipoMensagem.Aviso}/>
-    setMessage(true)
+    CamposMensagemBO.SetMessage(ETipoMensagem.Aviso, "Mensagem de Aviso");
+    setMessage(true);
   }
   function BtnErro ()
   {
-    msg = <Mensagem Mensagem={"Mensagem de Erro"} TipoMensagem={ETipoMensagem.Erro}/>
+    CamposMensagemBO.SetMessage(ETipoMensagem.Erro, "Mensagem de Erro");
     setMessage(true)
   }
   function BtnDone ()
   {
-    msg = <Mensagem Mensagem={"Mensagem de Certo"} TipoMensagem={ETipoMensagem.Done}/>
+    CamposMensagemBO.SetMessage(ETipoMensagem.Done, "Mensagem de OK");
     setMessage(true)
   }
   function BtnConfirm()
-  {
-    msg = <Mensagem Mensagem={"Mensagem de Confirmação"} TipoMensagem={ETipoMensagem.Confirmacao}/>
+  {       
+    CamposMensagemBO.SetMessage(ETipoMensagem.Confirmacao, "Mensagem de Confirmação");
     setMessage(true)
   }
   return (
     <>
-      <Master> 
-        <button onClick={BtnConfirm} type="submit">Click</button>
+      <Master FechaMensagem={CloseMessage} MostrarMensagem={isMessage} TextMensagem={undefined} TipoMensagem={undefined}> 
+        <button onClick={BtnAlerta} type="submit">Alerta</button>        
+        <button onClick={BtnErro} type="submit">Erro</button> 
+        <button onClick={BtnDone} type="submit">OK</button> 
+        <button onClick={BtnConfirm} type="submit">Confirma</button>  
       </Master>
-      {isMessage? {msg}:null}
     </>
   );
 };

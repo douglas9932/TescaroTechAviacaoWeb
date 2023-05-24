@@ -36,7 +36,7 @@ function c ()
 
 export const HomeDev: FunctionComponent = () => {
   return (
-    <Master>      
+    <Master FechaMensagem={undefined} MostrarMensagem={false} TextMensagem={undefined} TipoMensagem={undefined} >      
       <a >HOMEEEEEEasdasdaasd</a>
       <button onClick={a}>BTN1</button>
       <button onClick={b}>BTN2</button>

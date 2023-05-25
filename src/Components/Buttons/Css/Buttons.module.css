@@ -1,0 +1,102 @@
+:root {
+  /* fonts */
+  --font-nunito: Nunito;
+  --font-inter: Inter;
+  --font-roboto: Roboto;
+  --font-quicksand: Quicksand;
+
+  /* font sizes */
+  --font-size-xl: 20px;
+  --font-size-sm: 14px;
+  --font-size-xs: 12px;
+  --font-size-5xs: 8px;
+  --font-size-lg: 18px;
+  --font-size-base: 16px;
+  --font-size-5xl: 24px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-palegreen-100: #81ffa4;
+  --color-dimgray: #6f6f6f;
+  --color-lightskyblue: #72ccff;
+  --color-cornflowerblue: #99a3ff;
+  --cta-background-color: #a4c18b;
+  --color-darkslategray-100: #42526e;
+  --color-darkslategray-200: #495340;
+  --color-blueviolet: #9747ff;
+  --color-whitesmoke-100: #f5f6f8;
+  --color-whitesmoke-200: #f4f5f7;
+  --color-slategray: #5e6c84;
+  --color-orangered: #de350b;
+  --color-orange: #ffab00;
+  --color-royalblue: #0062bc;
+  --color-royalblue-100: #0052cc;
+  --material-theme: #6200ee;
+  --color-black: #000;
+  --color-darkslateblue: #004382;
+  --color-dodgerblue-100: #0085ff;
+  --color-dodgerblue-200: #0077e4;
+  --color-teal: #256d7c;
+  --color-maroon: #6b0000;
+
+  /* Gaps */
+  --gap-11xs: 2px;
+  --gap-6xs: 7px;
+  --gap-xs: 12px;
+  --gap-5xs: 8px;
+  --gap-8xs: 5px;
+  --gap-7xs: 6px;
+  --gap-12xs: 1px;
+
+  /* Paddings */
+  --padding-8xs: 5px;
+  --padding-xl: 20px;
+  --padding-3xs: 10px;
+  --padding-base: 16px;
+  --padding-11xs: 2px;
+
+  /* border radiuses */
+  --br-5xl: 24px;
+  --br-8xs: 5px;
+  --br-10xs: 3px;
+  --br-9xs: 4px;
+  --br-xl: 20px;
+}
+
+
+.vectorIcon {
+  position: relative;
+  width: 20.31px;
+  height: 20.31px;
+}
+.iconstart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.text {
+  position: relative;
+  line-height: 30px;
+  font-weight: 900;
+}
+.button,
+.iconend {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.button {
+  position: absolute;
+  top: 11px;
+  left: 16px;
+  background-color: var(--cta-background-color);
+  box-shadow: 0 5px 10px rgba(149, 149, 149, 0.2);
+  padding: 0 var(--padding-8xs);
+  gap: var(--gap-6xs);
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-darkslategray-200);
+  font-family: var(--font-nunito);
+}

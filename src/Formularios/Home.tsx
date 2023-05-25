@@ -1,9 +1,11 @@
 import { FunctionComponent, useCallback, useState } from 'react';
-import { Button } from 'semantic-ui-react';
+
 import { ETipoMensagem } from '../Enuns/ETipoMensagem';
 import { Master } from './Bases/Master';
 import Mensagem from './Mensagem/Mensagem';
 import { CamposMensagemBO } from '../ClassBO/CamposMensagemBO';
+import { Button } from '../Components/Buttons/Button';
+import Buttons from '../Components/Buttons/Buttons';
 
 
 let msg: JSX.Element;
@@ -39,10 +41,17 @@ export const Home: FunctionComponent = () => {
   return (
     <>
       <Master FechaMensagem={CloseMessage} MostrarMensagem={isMessage}> 
-        <button onClick={BtnAlerta} type="submit">Alerta</button>        
-        <button onClick={BtnErro} type="submit">Erro</button> 
-        <button onClick={BtnDone} type="submit">OK</button> 
-        <button onClick={BtnConfirm} type="submit">Confirma</button>  
+        <Buttons 
+        onClick={BtnAlerta} 
+        type="submit" 
+        Text={"Alerta"} 
+        BorderRadiusValue={25}
+        IconStart={"./vector1.svg"}
+        IconEnd={"./vector.svg"}/> 
+
+        {/* <Button onClick={BtnErro} type="submit" text={"Erro"}/> 
+        <Button onClick={BtnDone} type="submit" text={"OK"}/> 
+        <Button onClick={BtnConfirm} type="submit" css={"undefined"} text={"Confirmação"}/>   */}
       </Master>
     </>
   );

@@ -37,7 +37,7 @@ children , MostrarMensagem
     {isMensagemNovaPopupOpen && (
           <PortalPopup
             overlayColor="rgba(113, 113, 113, 0.3)"
-            placement="Centered"
+            placement="Top center"
             onOutsideClick={closeMensagemNovaPopup}
           >
             <Mensagem onClose={closeMensagemNovaPopup} Mensagem={CamposMensagemBO.prototype.Mensagem} TipoMensagem={CamposMensagemBO.prototype.TipoMensagem} />

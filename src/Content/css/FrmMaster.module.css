@@ -12,6 +12,7 @@
 .frameDiv1 {
   flex: 1;
   background-color: #e4ff98;
+  padding-left: 0px;
 }
 .frameDiv2,
 .menuAberto,
@@ -124,6 +125,11 @@
   .BodyDivSideBar{   
     z-index: 2;    
     opacity: 50%;
+  }
+  .frameDiv1 {
+    flex: 1;
+    background-color: #e4ff98;
+    padding-left: 0px;
   }
 }
 .DivSideBar{

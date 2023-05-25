@@ -43,12 +43,17 @@ export const Home: FunctionComponent = () => {
       <Master FechaMensagem={CloseMessage} MostrarMensagem={isMessage}> 
         <Buttons 
         onClick={BtnAlerta} 
-        type="submit" 
-        Text={"Alerta"} 
-        BorderRadiusValue={25}
-        IconStart={"./vector1.svg"}
-        IconEnd={"./vector.svg"}/> 
-
+        parType="submit" 
+        parText={"Alerta"} 
+        parBorderRadius={25}
+        parIconStart={"./vector1.svg"}
+        parIconEnd={"./vector.svg"}
+        parButtonColor={"red"}
+        parTextColor={"white"}
+        parTextAlign={"center"}
+        parHeight={60}
+        parWidth={240}
+        /> 
         {/* <Button onClick={BtnErro} type="submit" text={"Erro"}/> 
         <Button onClick={BtnDone} type="submit" text={"OK"}/> 
         <Button onClick={BtnConfirm} type="submit" css={"undefined"} text={"Confirmação"}/>   */}

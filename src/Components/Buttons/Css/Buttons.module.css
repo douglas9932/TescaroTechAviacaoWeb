@@ -63,22 +63,28 @@
   --br-xl: 20px;
 }
 
-
 .vectorIcon {
-  position: relative;
-  width: 20.31px;
-  height: 20.31px;
-}
-.iconstart {
   display: flex;
+  width: 100%;
+  height: 100%;
+}
+.iconstart 
+,.iconend{
+  display: flex;
+  width: 50%;
+  height: 90%;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
+
 .text {
-  position: relative;
-  line-height: 30px;
-  font-weight: 900;
+  display: flex;  
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
 }
 .button,
 .iconend {
@@ -99,4 +105,5 @@
   font-size: var(--font-size-xl);
   color: var(--color-darkslategray-200);
   font-family: var(--font-nunito);
+  cursor: pointer;
 }

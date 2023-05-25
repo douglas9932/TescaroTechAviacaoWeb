@@ -1,4 +1,5 @@
 import { ETipoMensagem } from "../Enuns/ETipoMensagem";
+import { GetError } from "./GetError";
 
 export class CamposMensagemBO{
     TipoMensagem: ETipoMensagem | undefined;
@@ -13,9 +14,9 @@ export class CamposMensagemBO{
        this.prototype.Mensagem = parMensagem;
     }
 
-    static SetErro(parMensagem: string | undefined){
-        this.prototype.TipoMensagem = ETipoMensagem.Erro;
-        this.prototype.Mensagem = parMensagem;
+    static SetErro(parMensagem: unknown){
+        this.prototype.TipoMensagem = ETipoMensagem.Erro; 
+        this.prototype.Mensagem = GetError(parMensagem);
      }
 
     static GetMessage(){

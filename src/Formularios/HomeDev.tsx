@@ -3,7 +3,7 @@ import Api from '../API/Api';
 import { PessoaBO } from '../ClassBO/PessoaBO';
 import TxbConsultaEmpresa from '../Consultas/ConsultaEmpresa/TxbConsultaEmpresa';
 import TxbConsultaUsuario from '../Consultas/ConsultaUsuario/TxbConsultaUsuario';
-import { Master } from './Master';
+import { Master } from './Bases/Master';
 
 let users: PessoaBO[]= [];
 function a ()
@@ -36,7 +36,7 @@ function c ()
 
 export const HomeDev: FunctionComponent = () => {
   return (
-    <Master FechaMensagem={undefined} MostrarMensagem={false} TextMensagem={undefined} TipoMensagem={undefined} >      
+    <Master FechaMensagem={undefined} MostrarMensagem={false}>
       <a >HOMEEEEEEasdasdaasd</a>
       <button onClick={a}>BTN1</button>
       <button onClick={b}>BTN2</button>

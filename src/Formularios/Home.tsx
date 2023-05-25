@@ -1,7 +1,7 @@
 import { FunctionComponent, useCallback, useState } from 'react';
 import { Button } from 'semantic-ui-react';
 import { ETipoMensagem } from '../Enuns/ETipoMensagem';
-import { Master } from './Master';
+import { Master } from './Bases/Master';
 import Mensagem from './Mensagem/Mensagem';
 import { CamposMensagemBO } from '../ClassBO/CamposMensagemBO';
 
@@ -38,7 +38,7 @@ export const Home: FunctionComponent = () => {
   }
   return (
     <>
-      <Master FechaMensagem={CloseMessage} MostrarMensagem={isMessage} TextMensagem={undefined} TipoMensagem={undefined}> 
+      <Master FechaMensagem={CloseMessage} MostrarMensagem={isMessage}> 
         <button onClick={BtnAlerta} type="submit">Alerta</button>        
         <button onClick={BtnErro} type="submit">Erro</button> 
         <button onClick={BtnDone} type="submit">OK</button> 

@@ -1,7 +1,9 @@
 import axios from "axios";
 
+let URLWebAPI = "http://172.16.0.20:53533"
+
 const Api = axios.create({
-  baseURL: "http://172.16.0.20:53533",
+  baseURL: URLWebAPI,
 });
 
 export default Api;
